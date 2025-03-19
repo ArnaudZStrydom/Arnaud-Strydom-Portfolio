@@ -1,6 +1,6 @@
 # Arnaud-Strydom-Portfolio
 
-Welcome to my portfolio! This repository contains a collection of projects, scripts, and tutorials I've worked on over the years. It showcases my skills in [C++ , Java , JavaScript , TypeScript , Node.js , css , HTML].
+Welcome to my portfolio! This repository contains a collection of projects, scripts, and tutorials I've worked on over the years. It showcases my skills in [C++ , Java , JavaScript , TypeScript , Node.js , css , HTML , PHP].
 
 ## Table of Contents
 - [Projects](#projects)
@@ -24,6 +24,9 @@ Here are some useful scripts I've written:
 
 ## How to Use
 To explore any project or script, navigate to its folder and read the `README.md` file for instructions on how to set it up and run it.
+Those that does not have any purely runs in the ide .
+For COS 344 you have to run docker on the folder and then from there atatch the container to your ide and run from there.
+For My City Management simulator it is still in development and thus only runs in Unreal Engine 5.
 
 ## License
 This repository is licensed under the [MIT License](LICENSE).
