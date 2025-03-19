@@ -1,0 +1,442 @@
+/* styles.css - Modern Green Color Palette */
+
+/* General Reset and Body Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out; /* Smooth transitions for all elements */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.7;
+    background-color: #f8f9fa; /* Light neutral background */
+    color: #2c3e50; /* Dark text for light mode */
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: #2c3e50; /* Dark text for headings */
+}
+
+body.dark-mode {
+    background-color: #121212; /* Dark background for dark mode */
+    color: #e0e0e0; /* Light text for dark mode */
+}
+
+body.dark-mode h1, 
+body.dark-mode h2, 
+body.dark-mode h3, 
+body.dark-mode h4, 
+body.dark-mode h5, 
+body.dark-mode h6 {
+    color: #e0e0e0; /* Light text for headings in dark mode */
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: #ffffff !important; /* Light navbar */
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #dddddd;
+    transition: background-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
+}
+
+body.dark-mode .navbar {
+    background-color: #1a1a1a !important; /* Dark navbar */
+    color: #ffffff;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: #2c3e50; /* Dark text for brand */
+    font-size: 1.8rem;
+    transition: color 0.5s ease;
+}
+
+body.dark-mode .navbar-brand {
+    color: #ffffff !important; /* Light text for brand in dark mode */
+}
+
+.navbar-nav .nav-link {
+    color: #2c3e50; /* Dark text for links */
+    margin-right: 20px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    font-weight: 500;
+}
+
+body.dark-mode .navbar-nav .nav-link {
+    color: #ffffff !important; /* Light text for links in dark mode */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #12c553; /* Vibrant green for hover */
+    transform: scale(1.1); /* Bobble effect */
+}
+
+body.dark-mode .navbar-nav .nav-link:hover {
+    color: #12c553 !important; /* Vibrant green for hover in dark mode */
+}
+
+/* Explosive Effect on Page Load */
+.hover-container {
+    
+    position: relative;
+}
+
+.explosive-text {
+    font-size: 4rem; /* Adjusted for hero section */
+    color: #fff;
+    letter-spacing: 0.1em;
+    display: inline-block;
+    position: relative;
+    opacity: 1; /* Start invisible */
+    transform: scale(1); /* Start slightly smaller */
+    animation: text-appear 1s ease-out forwards, burst-effect 1.5s ease-out 0.5s forwards;
+}
+
+.explosive-text.lead {
+    font-size: 1.5rem; /* Adjusted for paragraph */
+}
+
+@keyframes text-appear {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1; /* Ensure text stays visible */
+        transform: scale(1);
+    }
+}
+
+@keyframes burst-effect {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.explosive-text::before,
+.explosive-text::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    animation: burst 1s ease-out 0.5s forwards;
+}
+
+.explosive-text::before {
+    background: radial-gradient(circle, rgba(196, 195, 197, 0.692), transparent);
+    z-index: -1;
+}
+
+.explosive-text::after {
+    background: radial-gradient(circle, rgba(30, 31, 32, 0.6), transparent);
+    z-index: -2;
+}
+
+@keyframes burst {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 1;
+    }
+    70% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, #393b3a, #353d38); /* Green gradient background */
+    color: #ffffff;
+    padding: 150px 25px;
+    text-align: center;
+    position: relative;
+    border-radius: 0 0 30px 30px;
+}
+
+.hero-section h1 {
+    font-size: 2.3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    animation: fadeInDown 1s ease-in-out;
+}
+
+.hero-section p {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 30px;
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+.hero-section .btn-primary {
+    padding: 15px 30px;
+    animation: fadeIn 2s ease-in-out;
+    border-radius: 50px;
+    background-color: #ffffff; /* White button */
+    color: #000000; /* Green text */
+    border: none;
+}
+
+.hero-section .btn-primary:hover {
+    background-color: #0e9f43; /* Darker green hover */
+    color: #ffffff;
+}
+
+/* Section Styling */
+.container {
+    padding: 60px 15px;
+    background-color: #ffffff; /* White background */
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+    transition: background-color 0.5s ease;
+}
+
+body.dark-mode .container {
+    background-color: #2a2a2a !important; /* Dark background for containers */
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.1);
+}
+
+.container h2 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #2c3e50; /* Dark text for headings */
+    text-align: center;
+}
+
+body.dark-mode .container h2 {
+    color: #fcfcfc !important; /* Green for headings in dark mode */
+}
+
+.container p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #555; /* Neutral text */
+}
+
+body.dark-mode .container p {
+    color: #b0b0b0 !important; /* Light text for dark mode */
+}
+
+/* Card Styling for Services */
+
+/* Services Carousel */
+.services-carousel {
+    margin: 0 auto;
+    max-width: 800px; /* Limit carousel width */
+}
+
+.services-carousel .testimonial-item {
+    padding: 20px;
+    text-align: center;
+}
+
+.services-carousel .card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.services-carousel .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.services-carousel .card-body {
+    padding: 25px;
+    text-align: center;
+}
+
+.services-carousel .card-title {
+    font-size: 1.7rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #2c3e50; /* Dark text for titles */
+}
+
+body.dark-mode .services-carousel .card-title {
+    color: #12c553 !important; /* Green for titles in dark mode */
+}
+
+.services-carousel .card-text {
+    font-size: 1rem;
+    color: #666; /* Neutral text */
+}
+
+body.dark-mode .services-carousel .card-text {
+    color: #b0b0b0 !important; /* Light text for dark mode */
+}
+
+/* Slick Carousel Custom Styles */
+.slick-prev, .slick-next {
+    z-index: 1; /* Ensure arrows are above the content */
+}
+
+.slick-prev:before, .slick-next:before {
+    color: #12c553; /* Green arrows */
+}
+
+.slick-dots li button:before {
+    color: #12c553; /* Green dots */
+}
+
+.slick-dots li.slick-active button:before {
+    color: #12c553; /* Green active dot */
+}
+
+/* Testimonials Section */
+.testimonials-section {
+    background-color: #f8f9fa; /* Light background */
+    padding: 80px 15px;
+    transition: background-color 0.5s ease;
+}
+
+body.dark-mode .testimonials-section {
+    background-color: #1b1b1b !important; /* Dark background */
+}
+
+.testimonial-carousel {
+    margin: 0 auto;
+    max-width: 800px; /* Limit carousel width */
+}
+
+.testimonial-item {
+    padding: 20px;
+    text-align: center;
+}
+
+.blockquote {
+    font-size: 1.4rem;
+    font-style: italic;
+    margin: 20px;
+    padding: 30px;
+    border-left: 5px solid #12c553; /* Green accent */
+    background-color: #ffffff; /* White background */
+    transition: background-color 0.5s ease, border-left 0.5s ease;
+}
+
+body.dark-mode .blockquote {
+    background-color: #2b2b2b !important; /* Dark background */
+    border-left: 5px solid #12c553 !important; /* Green accent */
+}
+
+.blockquote-footer {
+    color: #12c553; /* Green text for footer */
+    margin-top: 10px;
+}
+
+/* Slick Carousel Custom Styles */
+.slick-prev, .slick-next {
+    z-index: 1; /* Ensure arrows are above the content */
+}
+
+.slick-prev:before, .slick-next:before {
+    color: #12c553; /* Green arrows */
+}
+
+.slick-dots li button:before {
+    color: #12c553; /* Green dots */
+}
+
+.slick-dots li.slick-active button:before {
+    color: #12c553; /* Green active dot */
+}
+
+/* Footer Styling */
+footer {
+    background-color: #2c3e50; /* Dark blue background */
+    padding: 40px;
+    color: #ffffff;
+    text-align: center;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    transition: background-color 0.5s ease;
+}
+
+body.dark-mode footer {
+    background-color: #1b1b1b !important; /* Dark background */
+}
+
+.social-icons a {
+    color: #ffffff;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #12c553; /* Green hover */
+}
+
+/* Button Styling */
+.btn-primary {
+    background-color: #12c553; /* Green button */
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, transform 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #0e9f43; /* Darker green hover */
+    transform: scale(1.05);
+}
+
+body.dark-mode .btn-primary {
+    background-color: #12c553 !important; /* Green button in dark mode */
+    color: #ffffff !important;
+}
+
+body.dark-mode .btn-primary:hover {
+    background-color: #0e9f43 !important; /* Darker green hover in dark mode */
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .hero-section h1 { font-size: 3rem; }
+    .hero-section p { font-size: 1.2rem; }
+    .navbar-nav { text-align: center; }
+    .navbar-nav .nav-link { margin: 10px 0; }
+}
+
+@media (max-width: 576px) {
+    .container h2 { font-size: 2.2rem; }
+    .card-title { font-size: 1.5rem; }
+    .card-text { font-size: 1rem; }
+}
