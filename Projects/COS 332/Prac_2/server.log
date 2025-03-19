@@ -1,0 +1,256 @@
+Feb 27, 2025 11:19:11 AM FriendDatabaseServer loadDatabase
+INFO: Database loaded successfully.
+Feb 27, 2025 11:19:11 AM FriendDatabaseServer main
+INFO: Server started on port 8080
+Feb 27, 2025 11:20:54 AM FriendDatabaseServer main
+INFO: New client connected: /0:0:0:0:0:0:0:1
+Feb 27, 2025 11:21:00 AM FriendDatabaseServer$ClientHandler run
+INFO: Client authenticated: /0:0:0:0:0:0:0:1
+Feb 27, 2025 11:21:00 AM FriendDatabaseServer$ClientHandler run
+INFO: Active users: 1
+Feb 27, 2025 11:21:12 AM FriendDatabaseServer$ClientHandler run
+INFO: Command received from /0:0:0:0:0:0:0:1: usercount
+Feb 27, 2025 11:21:12 AM FriendDatabaseServer$ClientHandler run
+INFO: Active users query from: /0:0:0:0:0:0:0:1
+Feb 27, 2025 11:21:30 AM FriendDatabaseServer main
+INFO: New client connected: /0:0:0:0:0:0:0:1
+Feb 27, 2025 11:21:34 AM FriendDatabaseServer$ClientHandler run
+INFO: Client authenticated: /0:0:0:0:0:0:0:1
+Feb 27, 2025 11:21:34 AM FriendDatabaseServer$ClientHandler run
+INFO: Active users: 1
+Feb 27, 2025 11:21:40 AM FriendDatabaseServer$ClientHandler run
+INFO: Command received from /0:0:0:0:0:0:0:1: usercount
+Feb 27, 2025 11:21:40 AM FriendDatabaseServer$ClientHandler run
+INFO: Active users query from: /0:0:0:0:0:0:0:1
+Feb 27, 2025 11:39:08 AM FriendDatabaseServer loadDatabase
+INFO: Database loaded successfully.
+Feb 27, 2025 11:39:08 AM FriendDatabaseServer main
+INFO: Server started on port 8080
+Feb 27, 2025 11:39:28 AM FriendDatabaseServer main
+INFO: New client connected: /0:0:0:0:0:0:0:1
+Feb 27, 2025 11:39:32 AM FriendDatabaseServer$ClientHandler run
+INFO: Client authenticated: /0:0:0:0:0:0:0:1
+Feb 27, 2025 11:39:36 AM FriendDatabaseServer$ClientHandler run
+INFO: Command received from /0:0:0:0:0:0:0:1: usercount
+Feb 27, 2025 11:39:50 AM FriendDatabaseServer main
+INFO: New client connected: /0:0:0:0:0:0:0:1
+Feb 27, 2025 11:39:53 AM FriendDatabaseServer$ClientHandler run
+INFO: Client authenticated: /0:0:0:0:0:0:0:1
+Feb 27, 2025 11:39:57 AM FriendDatabaseServer$ClientHandler run
+INFO: Command received from /0:0:0:0:0:0:0:1: usercount
+Feb 27, 2025 11:40:05 AM FriendDatabaseServer$ClientHandler run
+INFO: Command received from /0:0:0:0:0:0:0:1: list
+Feb 27, 2025 11:40:10 AM FriendDatabaseServer$ClientHandler run
+INFO: Command received from /0:0:0:0:0:0:0:1: add
+Feb 27, 2025 11:45:54 AM FriendDatabaseServer loadDatabase
+INFO: Database loaded successfully.
+Feb 27, 2025 11:45:54 AM FriendDatabaseServer main
+INFO: Server started on port 8080
+Feb 27, 2025 11:46:09 AM FriendDatabaseServer main
+INFO: New client connected: /0:0:0:0:0:0:0:1
+Feb 27, 2025 11:46:13 AM FriendDatabaseServer$ClientHandler run
+INFO: Client authenticated: /0:0:0:0:0:0:0:1
+Feb 27, 2025 11:46:38 AM FriendDatabaseServer$ClientHandler run
+INFO: Command received from /0:0:0:0:0:0:0:1: add
+Feb 27, 2025 11:47:06 AM FriendDatabaseServer$ClientHandler run
+INFO: Command received from /0:0:0:0:0:0:0:1: add Arnaud Strydom [C[C[C[C         0735736624
+Feb 27, 2025 11:47:22 AM FriendDatabaseServer$ClientHandler run
+INFO: Command received from /0:0:0:0:0:0:0:1: add 1234567890
+Feb 27, 2025 11:47:31 AM FriendDatabaseServer$ClientHandler run
+INFO: Command received from /0:0:0:0:0:0:0:1: add Arnaud 1234567890
+Feb 27, 2025 11:47:31 AM FriendDatabaseServer saveDatabase
+INFO: Database saved successfully.
+Feb 27, 2025 11:47:31 AM FriendDatabaseServer$ClientHandler run
+INFO: Friend added: Arnaud
+Feb 27, 2025 11:47:44 AM FriendDatabaseServer$ClientHandler run
+INFO: Command received from /0:0:0:0:0:0:0:1: list
+Feb 27, 2025 11:47:56 AM FriendDatabaseServer$ClientHandler run
+INFO: Command received from /0:0:0:0:0:0:0:1: search Arnaud
+Feb 27, 2025 11:47:56 AM FriendDatabaseServer$ClientHandler run
+INFO: Search query by name: Arnaud
+Feb 27, 2025 11:48:11 AM FriendDatabaseServer$ClientHandler run
+INFO: Command received from /0:0:0:0:0:0:0:1: search 0846672431
+Feb 27, 2025 11:48:11 AM FriendDatabaseServer$ClientHandler run
+INFO: Search query by number: 0846672431
+Feb 27, 2025 11:48:24 AM FriendDatabaseServer$ClientHandler run
+INFO: Command received from /0:0:0:0:0:0:0:1: edit Arnaud
+Feb 27, 2025 11:51:06 AM FriendDatabaseServer loadDatabase
+INFO: Database loaded successfully.
+Feb 27, 2025 11:51:07 AM FriendDatabaseServer main
+INFO: Server started on port 8080
+Feb 27, 2025 11:51:21 AM FriendDatabaseServer main
+INFO: New client connected: /0:0:0:0:0:0:0:1
+Feb 27, 2025 11:51:25 AM FriendDatabaseServer$ClientHandler run
+INFO: Client authenticated: /0:0:0:0:0:0:0:1
+Feb 27, 2025 11:51:41 AM FriendDatabaseServer$ClientHandler run
+INFO: Command received from /0:0:0:0:0:0:0:1: list
+Feb 27, 2025 11:51:46 AM FriendDatabaseServer$ClientHandler run
+INFO: Command received from /0:0:0:0:0:0:0:1: edit Arnaud
+Feb 27, 2025 11:51:58 AM FriendDatabaseServer saveDatabase
+INFO: Database saved successfully.
+Feb 27, 2025 11:51:58 AM FriendDatabaseServer$ClientHandler run
+INFO: Friend updated: Arnaud
+Feb 27, 2025 11:52:00 AM FriendDatabaseServer$ClientHandler run
+INFO: Command received from /0:0:0:0:0:0:0:1: list
+Feb 27, 2025 11:52:12 AM FriendDatabaseServer$ClientHandler run
+INFO: Command received from /0:0:0:0:0:0:0:1: edit Arnaudus
+Feb 27, 2025 11:52:21 AM FriendDatabaseServer saveDatabase
+INFO: Database saved successfully.
+Feb 27, 2025 11:52:21 AM FriendDatabaseServer$ClientHandler run
+INFO: Friend updated: Arnaudus
+Feb 27, 2025 11:52:24 AM FriendDatabaseServer$ClientHandler run
+INFO: Command received from /0:0:0:0:0:0:0:1: list
+Feb 27, 2025 11:52:32 AM FriendDatabaseServer$ClientHandler run
+INFO: Command received from /0:0:0:0:0:0:0:1: edit Arnaudus
+Feb 27, 2025 11:52:49 AM FriendDatabaseServer saveDatabase
+INFO: Database saved successfully.
+Feb 27, 2025 11:52:49 AM FriendDatabaseServer$ClientHandler run
+INFO: Friend updated: Arnaudus
+Feb 27, 2025 11:52:52 AM FriendDatabaseServer$ClientHandler run
+INFO: Command received from /0:0:0:0:0:0:0:1: list
+Feb 27, 2025 11:54:20 AM FriendDatabaseServer$ClientHandler run
+INFO: Command received from /0:0:0:0:0:0:0:1: active[C[C[C[C[C
+Mar 09, 2025 11:15:09 AM FriendDatabaseServer loadDatabase
+INFO: Database loaded successfully.
+Mar 09, 2025 11:15:09 AM FriendDatabaseServer main
+INFO: Server started on port 8080
+Mar 09, 2025 11:15:29 AM FriendDatabaseServer main
+INFO: New client connected: /0:0:0:0:0:0:0:1
+Mar 09, 2025 11:15:37 AM FriendDatabaseServer$ClientHandler run
+WARNING: Unauthorized access attempt from /0:0:0:0:0:0:0:1
+Mar 09, 2025 11:23:51 AM FriendDatabaseServer loadDatabase
+INFO: Database loaded successfully.
+Mar 09, 2025 11:23:51 AM FriendDatabaseServer main
+INFO: Server started on port 8080
+Mar 09, 2025 11:24:30 AM FriendDatabaseServer main
+INFO: New client connected: /0:0:0:0:0:0:0:1
+Mar 09, 2025 11:25:48 AM FriendDatabaseServer$ClientHandler run
+INFO: Client authenticated: /0:0:0:0:0:0:0:1
+Mar 09, 2025 11:25:48 AM FriendDatabaseServer$ClientHandler run
+INFO: Active users: 1
+Mar 09, 2025 11:26:22 AM FriendDatabaseServer$ClientHandler run
+INFO: Command received from /0:0:0:0:0:0:0:1: list
+Mar 09, 2025 11:26:32 AM FriendDatabaseServer$ClientHandler run
+INFO: Command received from /0:0:0:0:0:0:0:1: add John 1234567890
+Mar 09, 2025 11:26:32 AM FriendDatabaseServer saveDatabase
+INFO: Database saved successfully.
+Mar 09, 2025 11:26:32 AM FriendDatabaseServer$ClientHandler handleAddCommand
+INFO: Friend added: John
+Mar 09, 2025 11:26:40 AM FriendDatabaseServer$ClientHandler run
+INFO: Command received from /0:0:0:0:0:0:0:1: search john
+Mar 09, 2025 11:26:54 AM FriendDatabaseServer$ClientHandler run
+INFO: Command received from /0:0:0:0:0:0:0:1: delete John
+Mar 09, 2025 11:26:54 AM FriendDatabaseServer saveDatabase
+INFO: Database saved successfully.
+Mar 09, 2025 11:26:54 AM FriendDatabaseServer$ClientHandler handleDeleteCommand
+INFO: Friend deleted: John
+Mar 09, 2025 11:26:57 AM FriendDatabaseServer$ClientHandler run
+INFO: Command received from /0:0:0:0:0:0:0:1: list
+Mar 09, 2025 11:27:07 AM FriendDatabaseServer$ClientHandler run
+INFO: Command received from /0:0:0:0:0:0:0:1: usercount
+Mar 09, 2025 11:27:07 AM FriendDatabaseServer$ClientHandler run
+INFO: Active users query from: /0:0:0:0:0:0:0:1
+Mar 09, 2025 11:27:14 AM FriendDatabaseServer$ClientHandler run
+INFO: Command received from /0:0:0:0:0:0:0:1: help
+Mar 09, 2025 11:27:27 AM FriendDatabaseServer$ClientHandler run
+INFO: Command received from /0:0:0:0:0:0:0:1: exit
+Mar 09, 2025 11:27:27 AM FriendDatabaseServer$ClientHandler run
+INFO: Client disconnected: /0:0:0:0:0:0:0:1
+Mar 09, 2025 11:27:55 AM FriendDatabaseServer main
+INFO: New client connected: /0:0:0:0:0:0:0:1
+Mar 09, 2025 11:27:58 AM FriendDatabaseServer$ClientHandler run
+INFO: Client authenticated: /0:0:0:0:0:0:0:1
+Mar 09, 2025 11:27:58 AM FriendDatabaseServer$ClientHandler run
+INFO: Active users: 1
+Mar 09, 2025 11:28:05 AM FriendDatabaseServer$ClientHandler run
+INFO: Command received from /0:0:0:0:0:0:0:1: add John123 123
+Mar 09, 2025 11:28:22 AM FriendDatabaseServer$ClientHandler run
+INFO: Command received from /0:0:0:0:0:0:0:1: add John 9876543210
+Mar 09, 2025 11:28:22 AM FriendDatabaseServer saveDatabase
+INFO: Database saved successfully.
+Mar 09, 2025 11:28:22 AM FriendDatabaseServer$ClientHandler handleAddCommand
+INFO: Friend added: John
+Mar 09, 2025 11:28:26 AM FriendDatabaseServer$ClientHandler run
+INFO: Command received from /0:0:0:0:0:0:0:1: add John 9876543210
+Mar 09, 2025 11:28:40 AM FriendDatabaseServer$ClientHandler run
+INFO: Command received from /0:0:0:0:0:0:0:1: add John 98765432102
+Mar 09, 2025 11:28:59 AM FriendDatabaseServer$ClientHandler run
+INFO: Command received from /0:0:0:0:0:0:0:1: add John 9876543210[C[C 2
+Mar 09, 2025 11:29:05 AM FriendDatabaseServer$ClientHandler run
+INFO: Command received from /0:0:0:0:0:0:0:1: add m[C
+Mar 09, 2025 11:29:23 AM FriendDatabaseServer$ClientHandler run
+INFO: Command received from /0:0:0:0:0:0:0:1: add Johnm 08445567102
+Mar 09, 2025 11:29:32 AM FriendDatabaseServer$ClientHandler run
+INFO: Command received from /0:0:0:0:0:0:0:1: add john 0845567102
+Mar 09, 2025 11:29:32 AM FriendDatabaseServer saveDatabase
+INFO: Database saved successfully.
+Mar 09, 2025 11:29:32 AM FriendDatabaseServer$ClientHandler handleAddCommand
+INFO: Friend added: john
+Mar 09, 2025 11:29:38 AM FriendDatabaseServer$ClientHandler run
+INFO: Command received from /0:0:0:0:0:0:0:1: list
+Mar 09, 2025 11:30:27 AM FriendDatabaseServer$ClientHandler run
+INFO: Command received from /0:0:0:0:0:0:0:1: add m
+Mar 09, 2025 11:30:36 AM FriendDatabaseServer$ClientHandler run
+INFO: Command received from /0:0:0:0:0:0:0:1: add john 0845567103
+Mar 09, 2025 11:30:38 AM FriendDatabaseServer saveDatabase
+INFO: Database saved successfully.
+Mar 09, 2025 11:30:38 AM FriendDatabaseServer$ClientHandler handleAddCommand
+INFO: Friend added: john
+Mar 09, 2025 11:30:40 AM FriendDatabaseServer$ClientHandler run
+INFO: Command received from /0:0:0:0:0:0:0:1: list
+Mar 11, 2025 10:36:09 AM FriendDatabaseServer loadDatabase
+INFO: Database loaded successfully.
+Mar 11, 2025 10:36:09 AM FriendDatabaseServer main
+INFO: Server started on port 8080
+Mar 11, 2025 10:36:50 AM FriendDatabaseServer main
+INFO: New client connected: /0:0:0:0:0:0:0:1
+Mar 11, 2025 10:36:50 AM FriendDatabaseServer main
+INFO: New client connected: /0:0:0:0:0:0:0:1
+Mar 11, 2025 10:36:50 AM FriendDatabaseServer$ClientHandler run
+WARNING: Unauthorized access attempt from /0:0:0:0:0:0:0:1
+Mar 11, 2025 10:36:51 AM FriendDatabaseServer$ClientHandler run
+WARNING: Unauthorized access attempt from /0:0:0:0:0:0:0:1
+Mar 11, 2025 10:36:51 AM FriendDatabaseServer main
+INFO: New client connected: /0:0:0:0:0:0:0:1
+Mar 11, 2025 10:36:51 AM FriendDatabaseServer main
+INFO: New client connected: /0:0:0:0:0:0:0:1
+Mar 11, 2025 10:36:51 AM FriendDatabaseServer$ClientHandler run
+WARNING: Unauthorized access attempt from /0:0:0:0:0:0:0:1
+Mar 11, 2025 10:36:51 AM FriendDatabaseServer main
+INFO: New client connected: /0:0:0:0:0:0:0:1
+Mar 11, 2025 10:36:54 AM FriendDatabaseServer$ClientHandler run
+WARNING: Unauthorized access attempt from /0:0:0:0:0:0:0:1
+Mar 11, 2025 10:36:59 AM FriendDatabaseServer$ClientHandler run
+WARNING: Unauthorized access attempt from /0:0:0:0:0:0:0:1
+Mar 11, 2025 10:36:59 AM FriendDatabaseServer main
+INFO: New client connected: /0:0:0:0:0:0:0:1
+Mar 11, 2025 10:37:11 AM FriendDatabaseServer main
+INFO: New client connected: /0:0:0:0:0:0:0:1
+Mar 11, 2025 10:37:11 AM FriendDatabaseServer$ClientHandler run
+WARNING: Unauthorized access attempt from /0:0:0:0:0:0:0:1
+Mar 11, 2025 10:37:20 AM FriendDatabaseServer loadDatabase
+INFO: Database loaded successfully.
+Mar 11, 2025 10:37:20 AM FriendDatabaseServer main
+INFO: Server started on port 8080
+Mar 11, 2025 10:37:41 AM FriendDatabaseServer main
+INFO: New client connected: /0:0:0:0:0:0:0:1
+Mar 11, 2025 10:37:41 AM FriendDatabaseServer main
+INFO: New client connected: /0:0:0:0:0:0:0:1
+Mar 11, 2025 10:37:41 AM FriendDatabaseServer$ClientHandler run
+WARNING: Unauthorized access attempt from /0:0:0:0:0:0:0:1
+Mar 11, 2025 10:37:51 AM FriendDatabaseServer$ClientHandler run
+WARNING: Unauthorized access attempt from /0:0:0:0:0:0:0:1
+Mar 11, 2025 10:37:51 AM FriendDatabaseServer main
+INFO: New client connected: /0:0:0:0:0:0:0:1
+Mar 11, 2025 10:37:51 AM FriendDatabaseServer main
+INFO: New client connected: /0:0:0:0:0:0:0:1
+Mar 11, 2025 10:37:52 AM FriendDatabaseServer$ClientHandler run
+WARNING: Unauthorized access attempt from /0:0:0:0:0:0:0:1
+Mar 11, 2025 10:47:32 AM FriendDatabaseServer loadDatabase
+INFO: Database loaded successfully.
+Mar 11, 2025 10:47:32 AM FriendDatabaseServer main
+INFO: Server started on port 8080
+Mar 11, 2025 10:50:14 AM FriendDatabaseServer loadDatabase
+INFO: Database loaded successfully.
+Mar 11, 2025 10:50:14 AM FriendDatabaseServer main
+INFO: Server started on port 8080
