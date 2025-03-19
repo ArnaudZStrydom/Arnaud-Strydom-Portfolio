@@ -11,8 +11,8 @@ Welcome to my portfolio! This repository contains a collection of projects, scri
 
 ## Projects
 Here are some of the projects I've worked on:
-- **[Project 1](#)**: Brief description of the project.
-- **[Project 2](#)**: Brief description of the project.
+- **[City Management simulator](#)**: A city builder and management game in progress made in C++ and Unreal Engine 5.
+- **[Web dev projects](#)**: All of my web dev projects use a multitude of different languages like HTML ,Javascript , CSS , PHP.
 
 ## Tutorials
 Here are some tutorials I've followed or created:
@@ -27,6 +27,8 @@ To explore any project or script, navigate to its folder and read the `README.md
 Those that does not have any purely runs in the ide .
 For COS 344 you have to run docker on the folder and then from there atatch the container to your ide and run from there.
 For My City Management simulator it is still in development and thus only runs in Unreal Engine 5.
+
+still need to add some documentation for a few projects and will be done soon.
 
 ## License
 This repository is licensed under the [MIT License](LICENSE).
