@@ -1,0 +1,120 @@
+body {
+  
+    background-color: white;
+    
+    
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  @font-face {
+    font-family: 'Monseratt';
+    src: url('Montserrat-Regular.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Playfair';
+    src: url('PlayfairDisplay-Regular.ttf') format('truetype');
+
+  }
+  .logo{
+    width: 55px;
+    height: auto;
+   
+    
+  }
+
+
+  
+  .navbar {
+    display: flex;
+    background-color: black;
+    overflow: hidden;
+    
+  }
+  
+  .navbar a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 17px;
+  }
+  
+  .navbar a:hover {
+    background-color: rgb(223, 196, 75);
+    color: black;
+  }
+  
+  .navbar a.current {
+    background-color: rgb(223, 196, 75);
+    color: black;
+  }
+
+  input[type=number] {
+    padding: 6px;
+    margin-top: 9px;
+    margin-bottom: 9px;
+    margin-left: 150px;
+    font-size: 15px;
+    border: 1px solid #000000;
+  }
+  
+
+  @media screen and (max-width: 600px) {
+    .navbar a  .navbar input[type=text] {
+      display: block;
+      text-align: left;
+      width: 100%;
+      margin: 0;
+      padding: 14px;
+    }
+  }
+  
+  
+  #flex-container {
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(223, 196, 75);
+    
+  }
+
+
+  
+  .column {
+    float: left;
+    width: 600px;
+    padding: 10px;
+    height: 800px;
+    border: 0.5px solid black;
+  }
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  .details {
+    font-family: 'Monseratt' , 'serif';
+    padding: 10px;
+  }
+  
+  .details h2 {
+    font-family: 'Playfair' , 'serif';
+    color: #333;
+  }
+
+  .calcbtn {
+    font-family:'Monseratt' , Arial, Helvetica, sans-serif;
+    background-color: black;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+
+  }

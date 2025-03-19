@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>LinkedList.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCo Coverage Report</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">LinkedList.java</span></div><h1>LinkedList.java</h1><pre class="source lang-java linenums">public class LinkedList {
+    private Node head;
+
+<span class="fc" id="L4">    public LinkedList() {</span>
+<span class="fc" id="L5">        head = null;</span>
+<span class="fc" id="L6">    }</span>
+
+<span class="fc" id="L8">    public LinkedList(int value) {</span>
+<span class="fc" id="L9">        head = new Node(value);</span>
+<span class="fc" id="L10">    }</span>
+
+<span class="fc" id="L12">    public LinkedList(int[] values) {</span>
+<span class="fc bfc" id="L13" title="All 2 branches covered.">        for (int i : values) {</span>
+<span class="fc" id="L14">            insert(i);</span>
+        }
+<span class="fc" id="L16">    }</span>
+
+    public void insert(int value) {
+<span class="fc bfc" id="L19" title="All 2 branches covered.">        if (head == null) {</span>
+<span class="fc" id="L20">            head = new Node(value);</span>
+<span class="fc" id="L21">            return;</span>
+        }
+<span class="fc" id="L23">        Node newNode = new Node(value);</span>
+<span class="fc bfc" id="L24" title="All 2 branches covered.">        if (value &lt; head.value) {</span>
+<span class="fc" id="L25">            newNode.next = head;</span>
+<span class="fc" id="L26">            head = newNode;</span>
+<span class="fc" id="L27">            return;</span>
+        }
+<span class="fc" id="L29">        Node ptr = head;</span>
+<span class="pc bpc" id="L30" title="1 of 4 branches missed.">        while (ptr.next != null &amp;&amp; ptr.next.value &lt;= value) {</span>
+<span class="fc" id="L31">            ptr = ptr.next;</span>
+        }
+<span class="fc" id="L33">        newNode.next = ptr.next;</span>
+<span class="fc" id="L34">        ptr.next = newNode;</span>
+<span class="fc" id="L35">    }</span>
+
+    public boolean contains(int value) {
+<span class="fc" id="L38">        Node ptr = head;</span>
+<span class="fc bfc" id="L39" title="All 2 branches covered.">        while (ptr != null) {</span>
+<span class="fc bfc" id="L40" title="All 2 branches covered.">            if (ptr.value == value) {</span>
+<span class="fc" id="L41">                return true;</span>
+            }
+<span class="fc" id="L43">            ptr = ptr.next;</span>
+        }
+<span class="fc" id="L45">        return false;</span>
+    }
+
+    public void delete(int value) {
+<span class="fc bfc" id="L49" title="All 2 branches covered.">        if (!contains(value)) {</span>
+<span class="fc" id="L50">            return;</span>
+        }
+<span class="fc bfc" id="L52" title="All 2 branches covered.">        if (head.value == value) {</span>
+<span class="fc" id="L53">            head = head.next;</span>
+<span class="fc" id="L54">            return;</span>
+        }
+<span class="fc" id="L56">        Node ptr = head;</span>
+<span class="fc bfc" id="L57" title="All 2 branches covered.">        while (ptr.next.value != value) {</span>
+<span class="fc" id="L58">            ptr = ptr.next;</span>
+        }
+<span class="fc" id="L60">        ptr.next = ptr.next.next;</span>
+
+<span class="fc" id="L62">    }</span>
+
+    @Override
+    public String toString() {
+<span class="fc bfc" id="L66" title="All 2 branches covered.">        if (head == null) {</span>
+<span class="fc" id="L67">            return &quot;Empty&quot;;</span>
+        }
+<span class="fc" id="L69">        String res = &quot;&quot;;</span>
+<span class="fc" id="L70">        Node ptr = head;</span>
+<span class="fc bfc" id="L71" title="All 2 branches covered.">        while (ptr != null) {</span>
+<span class="fc bfc" id="L72" title="All 2 branches covered.">            if (ptr != head) {</span>
+<span class="fc" id="L73">                res += &quot;-&gt;&quot;;</span>
+            }
+<span class="fc" id="L75">            res += ptr.toString();</span>
+<span class="fc" id="L76">            ptr = ptr.next;</span>
+        }
+<span class="fc" id="L78">        return res;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

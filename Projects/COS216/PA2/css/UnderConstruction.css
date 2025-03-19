@@ -1,0 +1,32 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: Black;
+    
+    
+  }
+  @font-face {
+    font-family: 'Monseratt';
+    src: url('Montserrat-Regular.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Playfair';
+    src: url('PlayfairDisplay-Regular.ttf') format('truetype');
+
+  }
+  .logo{
+    width: 55px;
+    height: auto;
+  }
+    
+    img {
+        max-width: 500%;
+        max-height: 500%;
+        width: 70%;
+        height: auto;
+    }

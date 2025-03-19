@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/stylesPA1.css"> 
+</head>
+<body>
+
+        <!-- Login Section -->
+        <div id="login-section" class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <h2>Login</h2>
+                    <form>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email:</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password:</label>
+                            <input type="password" class="form-control" id="password" name="password" required>
+                        </div>
+                        <button id="loginButton" class="btn btn-primary" type="button">Login</button>
+                        <p id="loginMessage" class="mt-2"></p> 
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Auction Options Section -->
+        <div id="auction-options" class="container" style="display: none;">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <h1>Select Auction Option</h1>
+                    <button id="create-auction-btn" class="btn btn-primary">Create Auction</button>
+                    <button id="join-auction-btn" class="btn btn-primary">Join Auction</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Auction Details Section -->
+        <div id="auction-details" class="container" style="display: none;">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <h1>Auction Details</h1>
+                    <div id="auction-info">
+                        <div class="alllistings">
+                            <!-- Listings will be dynamically added here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="create-auction-section" class="container" style="display: none;">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <h2>Create Auction</h2>
+                    <form id="create-auction-form">
+                        <div class="mb-3">
+                            <label for="auctionName" class="form-label">Auction Name:</label>
+                            <input type="text" class="form-control" id="auctionName" name="auctionName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="startingPrice" class="form-label">Starting Price:</label>
+                            <input type="number" class="form-control" id="startingPrice" name="startingPrice" step="0.01" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="startDate" class="form-label">Start Date:</label>
+                            <input type="datetime-local" class="form-control" id="startDate" name="startDate" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="endDate" class="form-label">End Date:</label>
+                            <input type="datetime-local" class="form-control" id="endDate" name="endDate" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="listingID" class="form-label">Listing ID:</label>
+                            <input type="number" class="form-control" id="listingID" name="listingID" required>
+                        </div>
+                        <button type="submit"  id="create-btn" class="btn btn-primary">Create Auction</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div id="auction-view-details" class="container" style="display: none;">
+            <div class="row justify-content-center">
+                
+                    <h1>Auction Bidding</h1>
+                    <div id="auction-view-info">
+                        <div class="flex-container1">
+                            <div id = "HouseView-container" class="HouseView-container">
+                              <!-- Placeholder for carosel details -->
+                        
+                            </div>
+                        </div>
+
+                        <div id = higestbid>
+                            <h2>Highest Bid</h2>
+                            <div id =highestbidprice>
+
+                            </div>
+                        </div>
+                        
+                                
+                        <div class="allinfo">
+                            <div class="singleinfo">
+                                <div class="biddetails">
+                                            <!-- Placeholder for listing details -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+            </div>
+        </div>
+
+
+    
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+</body>
+</html>

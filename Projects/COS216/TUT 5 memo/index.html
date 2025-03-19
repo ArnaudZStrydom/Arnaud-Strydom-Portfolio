@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Display Text</title>
+	<link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<h1></h1>
+
+<div id="mainScreen" class="container maincontainer">
+	<h2>Sending to and Receiving from Sockets</h2>
+	<button onclick="reconnect()">Reconnect</button> <br>
+
+	<div id='viewer'>
+		<h2 class="notcon"> Not connected </h2>
+	</div> <br>
+
+	<input type="range" id="angle" min="0" max="360" oninput="sendAngle()"> </input>
+	<br>
+	<div id="square"> </div>
+</div>
+
+<script>
+
+var socket;
+var squareD = document.getElementById('square');
+var slider = document.getElementById('angle');
+
+function reconnect()
+{
+	document.getElementById('viewer').innerHTML = '<h2 class="notcon"> Not connected </h2>';
+	//Connection code
+
+	try //Attempt to disconnect before reconnect, otherwise multiple sockets open
+	{
+		socket.close();
+	}
+	catch(e) {}
+
+	socket = new WebSocket('ws://localhost:8081');
+
+	socket.onopen = openSocket;
+	socket.onmessage = socketMessage;
+	socket.onclose = closeSocket;
+	
+}
+
+
+//When the socket connects
+function openSocket(ev)
+{
+	document.getElementById('viewer').innerHTML = '<h2 class="con"> Connected </h2>'; 
+}
+
+//When the socket disconnects
+function closeSocket(ev)
+{
+	document.getElementById('viewer').innerHTML = '<h2 class="notcon"> Not connected </h2>';
+}
+
+//When a message is received from the socket
+function socketMessage(ev)
+{
+	squareD.style.transform = 'rotate(' + ev.data + 'deg)';
+}
+
+
+function sendAngle()
+{
+	var mess = slider.value;
+	socket.send(mess);
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+[{
+    "firstname": "Jack",
+    "lastname": "Steves",
+    "about": "Hey there, i love to fish",
+    "hobbies": ["Fishing", "Archery", "Hunting"]
+  },
+    {
+        "firstname": "John",
+        "lastname": "Doe",
+        "about": "I am a uni student",
+        "hobbies": ["Video Games", "Hunting", "Fishing"]
+    },
+    {
+        "firstname": "Jane",
+        "lastname": "Doe",
+        "about": "I am still at school but i like videogames",
+        "hobbies": ["Video Games", "Swimming", "Running"]
+    }
+]
+

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Chitter</title>
+	<link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<h1>Start Chitting</h1>
+
+<div id="mainScreen" class="container maincontainer">
+<h2>Choose a name</h2>
+<input type="text" id="nameBox" />
+<button onclick="tryName()">Use Name</button>
+
+</div>
+
+<script>
+
+const port = '8085';
+var uid = 'Anonymous';
+var interval;
+
+//Choose a name and load main interface
+function tryName()
+{
+	var name = document.getElementById('nameBox').value;
+	if (name == '') //Empty box
+	{
+		return;
+	}
+
+	uid = name;
+	document.getElementById('mainScreen').innerHTML = chatWindow; //Got a name, start getting messages
+	loggin = true;
+	interval = setInterval(loadMessages, 1000);
+
+}
+
+//Preiodially get messages
+function loadMessages()
+{
+	var xm = new XMLHttpRequest();
+	xm.open("GET", "http://localhost:" + port + "/messages");
+	xm.onload = function()
+	{
+		var res = this.responseText;
+		var ret = '';
+
+		var screen = document.getElementById('chitScreen');
+		try
+		{
+			var messages = JSON.parse(res)['messages']; //Get all messages into the viewer
+			for (var i=0;i<messages.length;i++)
+			{
+				var chit = '<div class="chit"><div class="chitname">' + decodeURIComponent(messages[i].user) + '</div> <br> <div class="chext">' + decodeURIComponent(messages[i].message) + '</div> </div><br>';
+				ret += chit;
+			}
+		}
+		catch (e) //Display error, in stead of messages
+		{
+			ret = '<div class="chit error">' + e + "</div>";
+		}
+		screen.innerHTML = ret;
+		
+	}
+
+	xm.send();
+
+}
+
+//Send a chit using GET
+function sendChit()
+{
+
+	var message = document.getElementById('messageInput').value;
+	if (message == '') //Don't send empty message
+	
+		return;
+
+	var xm = new XMLHttpRequest();
+	xm.open("POST", "http://localhost:" + port + "/send");
+	xm.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+	xm.send('user='+ encodeURIComponent(uid) + '&message=' + encodeURIComponent(message));
+	document.getElementById('messageInput').value = '';
+
+}
+
+const chatWindow = '<div id="chitScreen" class="container chitscontainer"> <div class="chit"><div class="chitname"> Chitter Help</div><br><div class="chext">Welcome to Chitter! Start Chitting Today!</div> </div></div><div class="container sendcontainer"> <input type="text" id="messageInput"></input> <button id="sendChit" onclick="sendChit()">Send</button> </div>';
+
+</script>
+
+</body>
+</html>

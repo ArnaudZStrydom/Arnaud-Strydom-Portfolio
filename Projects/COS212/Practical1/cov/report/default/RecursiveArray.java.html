@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RecursiveArray.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCo Coverage Report</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">RecursiveArray.java</span></div><h1>RecursiveArray.java</h1><pre class="source lang-java linenums">public class RecursiveArray {
+    public Integer[] array;
+
+<span class="fc" id="L4">    public RecursiveArray() {</span>
+<span class="fc" id="L5">        array = new Integer[0];</span>
+<span class="fc" id="L6">    }</span>
+
+<span class="fc" id="L8">    public RecursiveArray(String input) {</span>
+<span class="fc bfc" id="L9" title="All 2 branches covered.">        if(input.isEmpty()){</span>
+<span class="fc" id="L10">            array = new Integer[0]; </span>
+        }
+        else{
+<span class="fc" id="L13">            String[] values = input.split(&quot;\\s*,\\s*&quot;);</span>
+<span class="fc" id="L14">            array = new Integer[values.length];</span>
+<span class="fc" id="L15">            helpintoarray(values, 0);</span>
+        }
+<span class="fc" id="L17">    }</span>
+
+    private void helpintoarray(String[] values, int index){
+<span class="fc bfc" id="L20" title="All 2 branches covered.">        if(index == values.length){</span>
+<span class="fc" id="L21">            return;</span>
+        }
+        
+<span class="fc" id="L24">        array[index]= Integer.parseInt(values[index]);</span>
+<span class="fc" id="L25">        helpintoarray(values, index + 1);</span>
+<span class="fc" id="L26">    }</span>
+
+    @Override
+    public String toString() {
+<span class="fc bfc" id="L30" title="All 2 branches covered.">        if (array.length == 0) {</span>
+<span class="fc" id="L31">            return &quot;Empty Array&quot;;</span>
+        } else {
+<span class="fc" id="L33">            return &quot;[&quot; + toStringhelper(0, &quot;&quot;) + &quot;]&quot;;</span>
+        }
+    }
+
+
+    private String toStringhelper(int index , String result){
+<span class="fc bfc" id="L39" title="All 2 branches covered.">        if (index == array.length - 1) {</span>
+<span class="fc" id="L40">            return result + String.valueOf(array[index]);</span>
+        } else {
+<span class="fc" id="L42">            return toStringhelper(index + 1, result + array[index].toString() + &quot;,&quot;);</span>
+        }  
+    }
+
+    public void append(Integer value) {
+<span class="fc" id="L47">        Integer[] prepArray = new Integer[array.length + 1];</span>
+<span class="fc" id="L48">        appendhelper(array, prepArray, value, 0);</span>
+<span class="fc" id="L49">        array = prepArray;</span>
+<span class="fc" id="L50">    }</span>
+
+    private void appendhelper(Integer[] og, Integer[] nw, Integer value, int index) {
+<span class="fc bfc" id="L53" title="All 2 branches covered.">        if (index &lt; og.length) {</span>
+<span class="fc" id="L54">            nw[index] = og[index];</span>
+<span class="fc" id="L55">            appendhelper(og, nw, value, index + 1);</span>
+        } else {
+<span class="fc" id="L57">            nw[index] = value;</span>
+        }
+<span class="fc" id="L59">    }</span>
+
+    public void prepend(Integer value) {
+<span class="fc" id="L62">        Integer[] prepArray = new Integer[array.length + 1];</span>
+<span class="fc" id="L63">        prependhelper(array, prepArray, value, 0);</span>
+<span class="fc" id="L64">        array = prepArray;</span>
+<span class="fc" id="L65">    }</span>
+
+    private void prependhelper(Integer[] og, Integer[] nw, Integer value, int index) {
+    
+<span class="fc" id="L69">        nw[0] = value;</span>
+<span class="fc bfc" id="L70" title="All 2 branches covered.">        if (index &lt; og.length) {</span>
+<span class="fc" id="L71">            nw[index + 1] = og[index];</span>
+<span class="fc" id="L72">            prependhelper(og, nw, value, index + 1);</span>
+        }
+<span class="fc" id="L74">    }</span>
+
+    public boolean contains(Integer value) {
+<span class="fc" id="L77">        return containshelper(array, value, 0);</span>
+    }
+
+    private boolean containshelper(Integer[] arr, Integer value, int index) {
+<span class="fc bfc" id="L81" title="All 2 branches covered.">        if (index == arr.length) {</span>
+<span class="fc" id="L82">            return false;</span>
+<span class="fc bfc" id="L83" title="All 2 branches covered.">        } else if (arr[index].equals(value)) {</span>
+<span class="fc" id="L84">            return true;</span>
+        } else {
+<span class="fc" id="L86">            return containshelper(arr, value, index + 1);</span>
+        }
+    }
+
+    public boolean isAscending() {
+<span class="fc" id="L91">        return isAscendingHelper(array, 0);</span>
+    }
+
+    private boolean isAscendingHelper(Integer[] arr, int index) {
+<span class="fc bfc" id="L95" title="All 2 branches covered.">        if (index &gt;= arr.length - 1) {</span>
+<span class="fc" id="L96">            return true;</span>
+<span class="fc bfc" id="L97" title="All 2 branches covered.">        } else if (arr[index] &gt; arr[index + 1]) {</span>
+<span class="fc" id="L98">            return false;</span>
+        } else {
+<span class="fc" id="L100">            return isAscendingHelper(arr, index + 1);</span>
+        }
+    }
+    public boolean isDescending() {
+<span class="fc" id="L104">        return isDescendingHelper(array, 0);</span>
+    }
+
+    private boolean isDescendingHelper(Integer[] arr, int index) {
+<span class="pc bpc" id="L108" title="1 of 2 branches missed.">        if (index &gt;= arr.length - 1) {</span>
+<span class="nc" id="L109">            return true;</span>
+<span class="pc bpc" id="L110" title="1 of 2 branches missed.">        } else if (arr[index] &lt; arr[index + 1]) {</span>
+<span class="nc" id="L111">            return false;</span>
+        } else {
+<span class="fc" id="L113">            return isAscendingHelper(arr, index + 1);</span>
+        }
+    }
+
+    public void sortAscending() {
+<span class="fc" id="L118">        sortAscendingHelper(array, array.length , 0 , array.length - 1 );</span>
+        
+<span class="fc" id="L120">    }</span>
+
+    private void sortAscendingHelper(Integer[] arr, int length , int cIndex, int eIndex) {
+<span class="pc bpc" id="L123" title="1 of 4 branches missed.">        if (length &lt;= 1 || eIndex &lt;= 0 ) {</span>
+<span class="fc" id="L124">            return;</span>
+        }
+    
+<span class="fc bfc" id="L127" title="All 2 branches covered.">        if (cIndex &gt;= eIndex) {</span>
+<span class="fc" id="L128">            cIndex = 0;</span>
+<span class="fc" id="L129">            eIndex--;</span>
+        }
+    
+<span class="fc bfc" id="L132" title="All 2 branches covered.">        if (arr[cIndex] &gt; arr[cIndex + 1]) {</span>
+<span class="fc" id="L133">            int temp = arr[cIndex];</span>
+<span class="fc" id="L134">            arr[cIndex] = arr[cIndex + 1];</span>
+<span class="fc" id="L135">            arr[cIndex + 1] = temp;</span>
+        }
+    
+    
+<span class="fc" id="L139">        sortAscendingHelper(arr, length , cIndex + 1 , eIndex );</span>
+<span class="fc" id="L140">    }</span>
+
+    
+    
+        
+   
+    public void sortDescending() {
+<span class="fc" id="L147">        sortDescendingHelper(array, array.length , 0 , array.length - 1 );</span>
+<span class="fc" id="L148">    }</span>
+
+    private void sortDescendingHelper(Integer[] arr, int length , int cIndex, int eIndex) {
+<span class="pc bpc" id="L151" title="1 of 4 branches missed.">        if (length &lt;= 1 || eIndex &lt;= 0 ) {</span>
+<span class="fc" id="L152">            return;</span>
+        }
+    
+<span class="fc bfc" id="L155" title="All 2 branches covered.">        if (cIndex &gt;= eIndex) {</span>
+<span class="fc" id="L156">            cIndex = 0;</span>
+<span class="fc" id="L157">            eIndex--;</span>
+        }
+    
+<span class="fc bfc" id="L160" title="All 2 branches covered.">        if (arr[cIndex] &lt; arr[cIndex + 1]) {</span>
+<span class="fc" id="L161">            int temp = arr[cIndex];</span>
+<span class="fc" id="L162">            arr[cIndex] = arr[cIndex + 1];</span>
+<span class="fc" id="L163">            arr[cIndex + 1] = temp;</span>
+        }
+    
+    
+<span class="fc" id="L167">        sortDescendingHelper(arr, length , cIndex + 1 , eIndex );</span>
+<span class="fc" id="L168">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HeavenHaven</title>
+    <link rel="icon" type="image/x-icon" href="img/HEAVEN HAVEN (3).png">
+    <link rel="stylesheet" href="css/stylesPA1.css">
+</head>
+<body>
+  
+<div class="navbar">
+  <img class="logo" src="img/HEAVEN_HAVEN__2_-removebg-preview.png" alt="Logo">;
+  <a href="https://wheatley.cs.up.ac.za/u23536013/index.html">Home</a>
+  <a class="current" href="https://wheatley.cs.up.ac.za/u23536013/COS216/PA2/index2.html">Listings</a>
+  <a href="https://wheatley.cs.up.ac.za/u23536013/COS216/PA2/agents.html">Agents</a>
+  <a href="https://wheatley.cs.up.ac.za/u23536013/COS216/PA2/calculator.html">Calculators</a>
+  <a href="https://wheatley.cs.up.ac.za/u23536013/COS216/PA2/favourites.html">Favourites</a>
+  <input id="searchInput" type="text" placeholder="Search..">
+</div>
+
+<div id="flex-container">
+  <div class="dropdown" id="rentBuyDropdown">
+    <button class="dropbtn">Rent/Buy</button>
+    <div class="dropdowncont">
+      <span data-filter="type" data-value="rent" class="dropdown-item">Rent</span>
+      <span data-filter="type" data-value="sale" class="dropdown-item">Buy</span>
+    </div>
+  </div>
+  <div class="dropdown" id="bedroomsDropdown">
+    <button class="dropbtn">Bedrooms</button>
+    <div class="dropdowncont">
+      <span data-filter="bedrooms" data-value="1" class="dropdown-item">1</span>
+      <span data-filter="bedrooms" data-value="2" class="dropdown-item">2</span>
+      <span data-filter="bedrooms" data-value="3" class="dropdown-item">3</span>
+      <span data-filter="bedrooms" data-value="4" class="dropdown-item">4</span>
+      <span data-filter="bedrooms" data-value="5" class="dropdown-item">5</span>
+      <span data-filter="bedrooms" data-value="6" class="dropdown-item">6+</span>
+    </div>
+  </div>
+  <div class="dropdown" id="bathroomsDropdown">
+    <button class="dropbtn">Bathrooms</button>
+    <div class="dropdowncont">
+      <span data-filter="bathrooms" data-value="1" class="dropdown-item">1</span>
+      <span data-filter="bathrooms" data-value="2" class="dropdown-item">2</span>
+      <span data-filter="bathrooms" data-value="3" class="dropdown-item">3</span>
+      <span data-filter="bathrooms" data-value="4" class="dropdown-item">4+</span>
+    </div>
+  </div>
+  <div class="dropdown" id="garagesDropdown">
+    <button class="dropbtn">Garages</button>
+    <div class="dropdowncont">
+      <span data-filter="parking_spaces" data-value="1" class="dropdown-item">1</span>
+      <span data-filter="parking_spaces" data-value="2" class="dropdown-item">2</span>
+      <span data-filter="parking_spaces" data-value="3" class="dropdown-item">3</span>
+      <span data-filter="parking_spaces" data-value="4" class="dropdown-item">4+</span>
+    </div>
+  </div>
+  <div class="dropdown" id="sortByDropdown">
+    <button class="dropbtn">Sort by</button>
+    <div class="dropdowncont">
+      <span data-filter="sort" data-value="price" class="dropdown-item">Price</span>
+      <span data-filter="sort" data-value="title" class="dropdown-item">Title</span>
+    </div>
+  </div>
+  <div class="dropdown" id="cleardropdown">
+    <button class="dropbtn">Clear filters</button>
+  </div>
+</div>
+
+<div class="loader">
+  <img src="img/loader.gif" class="loader" alt="Loading...">
+</div>
+
+<div class="alllistings">
+    <!-- Listings will be dynamically added here -->
+</div>
+
+<script src="listings.js"></script>
+
+</body>
+</html>

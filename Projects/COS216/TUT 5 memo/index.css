@@ -1,0 +1,93 @@
+body {
+	background: black;
+}
+
+h2 {
+
+	color: lightblue;
+
+}
+
+h1, p {
+	color:white;
+	text-align: center;
+}
+
+
+.header {
+	font-size: 150%;
+	color: red;
+	margin-bottom: 5px;
+	border-bottom: solid red 2px;
+
+}
+
+.notcon {
+	color: red;
+}
+
+
+button {
+
+	font-size: 150%;
+	margin: 20px;
+
+}
+
+.con {
+	color: green;
+}
+
+div {
+	color: white;
+
+}
+
+.container {
+
+	position: relative;
+	text-align: center;
+}
+
+#square {
+
+	width: 100px;
+	height: 100px;
+	border: solid black 2px;
+	border-radius: 5px;
+	background-color: white;
+	position: relative;
+	display: inline-block;
+	margin: 50px;
+
+}
+
+
+input {
+
+	margin-top: 15px;
+	border-radius: 10px;	
+	width: 50%;
+
+}
+
+.maincontainer {
+
+	display: block;
+
+}
+
+
+#viewer {
+
+	border: solid white 1px;
+	border-radius: 10px;
+	width: 50%;
+	left: 0%;
+	position: relative;
+	display: inline-block;
+	padding: 5px;
+
+}
+
+

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Profile</title>
+  <link rel="stylesheet" href="css/profileaction.css">
+</head>
+<body>
+  <h1>Add New Profile</h1>
+  <form id="addProfileForm">
+    <label for="profileName">Profile Name:</label>
+    <input type="text" id="profileName" name="profileName" required><br><br>
+    <label for="isChildProfile">Is Child Profile:</label>
+    <input type="checkbox" id="isChildProfile" name="isChildProfile"><br><br>
+    <label for="languageID">Language ID:</label>
+    <div class="dropdown" id="language">
+        <button class="dropbtn">Language</button>
+        <div class="dropdowncont">
+          <span data-filter="Language_Name" data-value="English" class="dropdown-item">English</span>
+          <span data-filter="Language_Name" data-value="Spanish" class="dropdown-item">Spanish</span>
+          <span data-filter="Language_Name" data-value="German" class="dropdown-item">German</span>
+          <span data-filter="Language_Name" data-value="Afrikaans" class="dropdown-item">Afrikaans</span>
+          <span data-filter="Language_Name" data-value="Arabic" class="dropdown-item">Arabic</span>
+          <span data-filter="Language_Name" data-value="Portugese" class="dropdown-item">Portugese</span>
+          <span data-filter="Language_Name" data-value="Dutch" class="dropdown-item">Dutch</span>
+          <span data-filter="Language_Name" data-value="Zulu" class="dropdown-item">Zulu</span>
+          <span data-filter="Language_Name" data-value="isiXhosa" class="dropdown-item">isiXhosa</span>
+        </div>
+    </div>
+    <button type="submit">Create Profile</button>
+  </form>
+  <script src="addProfile.js"></script>
+</body>
+</html>

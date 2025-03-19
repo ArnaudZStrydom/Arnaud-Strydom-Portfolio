@@ -1,0 +1,81 @@
+[26-May-2024 13:27:22 Africa/Johannesburg] getReviews called with data: Array
+(
+    [type] => GetReviews
+    [title_ID] => 2
+)
+
+[26-May-2024 13:27:22 Africa/Johannesburg] PHP Fatal error:  Uncaught Error: Call to undefined function sendResponse() in /home/students/u23536013/cos221/api.php:1278
+Stack trace:
+#0 /home/students/u23536013/cos221/api.php(69): API->getReviews(Array)
+#1 /home/students/u23536013/cos221/api.php(1320): API->handleRequest()
+#2 {main}
+  thrown in /home/students/u23536013/cos221/api.php on line 1278
+[26-May-2024 13:27:42 Africa/Johannesburg] getReviews called with data: Array
+(
+    [type] => GetReviews
+    [title_ID] => 2
+)
+
+[26-May-2024 13:27:42 Africa/Johannesburg] PHP Fatal error:  Uncaught Error: Call to undefined function sendResponse() in /home/students/u23536013/cos221/api.php:1278
+Stack trace:
+#0 /home/students/u23536013/cos221/api.php(69): API->getReviews(Array)
+#1 /home/students/u23536013/cos221/api.php(1320): API->handleRequest()
+#2 {main}
+  thrown in /home/students/u23536013/cos221/api.php on line 1278
+[26-May-2024 13:42:30 Africa/Johannesburg] getReviews called with data: Array
+(
+    [type] => GetReviews
+    [title_ID] => 2
+)
+
+[26-May-2024 13:47:03 Africa/Johannesburg] getReviews called with data: Array
+(
+    [type] => GetReviews
+    [title_ID] => 2
+)
+
+[26-May-2024 13:47:49 Africa/Johannesburg] getReviews called with data: Array
+(
+    [type] => GetReviews
+    [title_ID] => 2
+)
+
+[26-May-2024 13:48:25 Africa/Johannesburg] getReviews called with data: Array
+(
+    [type] => GetReviews
+    [title_ID] => 2
+)
+
+[26-May-2024 13:51:17 Africa/Johannesburg] getReviews called with data: Array
+(
+    [type] => GetReviews
+    [title_ID] => 2
+)
+
+[26-May-2024 13:52:12 Africa/Johannesburg] getReviews called with data: Array
+(
+    [type] => GetReviews
+    [title_ID] => 2
+)
+
+[26-May-2024 13:52:31 Africa/Johannesburg] getReviews called with data: Array
+(
+    [type] => GetReviews
+    [title_ID] => 2
+)
+
+[26-May-2024 13:52:31 Africa/Johannesburg] submitReview called with data: Array
+(
+    [type] => SubmitReview
+    [title_ID] => 2
+    [profile_ID] => 
+    [review_text] => This is a very cool movie
+    [rating] => 5
+)
+
+[26-May-2024 13:52:40 Africa/Johannesburg] getReviews called with data: Array
+(
+    [type] => GetReviews
+    [title_ID] => 2
+)
+

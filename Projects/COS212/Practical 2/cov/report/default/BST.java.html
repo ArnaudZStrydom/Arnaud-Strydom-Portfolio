@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>BST.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCo Coverage Report</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">BST.java</span></div><h1>BST.java</h1><pre class="source lang-java linenums">public class BST&lt;T extends Comparable&lt;T&gt;&gt; {
+
+    public BinaryNode&lt;T&gt; root;
+
+<span class="fc" id="L5">    public BST() {</span>
+<span class="fc" id="L6">        this.root = null; </span>
+<span class="fc" id="L7">    }</span>
+
+    public void delete(T data) {
+
+<span class="fc" id="L11">        deleteRec(root,data);</span>
+<span class="fc" id="L12">    }</span>
+
+    private BinaryNode&lt;T&gt; deleteRec(BinaryNode&lt;T&gt; node, T data) {
+<span class="fc bfc" id="L15" title="All 2 branches covered.">        if(node == null){</span>
+<span class="fc" id="L16">            return node ;</span>
+        }
+
+<span class="fc" id="L19">        int compres = data.compareTo( node.data );</span>
+<span class="fc bfc" id="L20" title="All 2 branches covered.">        if(compres &lt; 0){</span>
+<span class="fc" id="L21">            node.left = deleteRec(node.left, data);</span>
+        }
+<span class="fc bfc" id="L23" title="All 2 branches covered.">        else if(compres &gt; 0){</span>
+<span class="fc" id="L24">            node.right = deleteRec(node.right, data);</span>
+        }
+<span class="pc bpc" id="L26" title="1 of 4 branches missed.">        else if (  node.left != null &amp;&amp; node.right != null){</span>
+<span class="fc" id="L27">            node.data = findMindel(node.right).data;</span>
+<span class="fc" id="L28">            node.right = deleteRec(node.right,node.data);</span>
+        }
+        else {
+<span class="pc bpc" id="L31" title="1 of 2 branches missed.">            node = ( node.left != null ) ? node.left : node.right;</span>
+        }
+<span class="fc" id="L33">        return node ;</span>
+    }
+
+    private BinaryNode&lt;T&gt; findMindel(BinaryNode&lt;T&gt; node) {
+<span class="pc bpc" id="L37" title="1 of 2 branches missed.">        if(node == null){</span>
+<span class="nc" id="L38">            return null ;</span>
+        }
+<span class="fc bfc" id="L40" title="All 2 branches covered.">        else if(node.left == null) {</span>
+<span class="fc" id="L41">            return node ;</span>
+        }
+<span class="fc" id="L43">        return findMindel( node.left );</span>
+    }
+
+    public boolean contains(T data) {
+
+<span class="fc" id="L48">        return containsRecur(root, data);</span>
+    }
+
+    private boolean containsRecur(BinaryNode&lt;T&gt; node, T data) {
+<span class="fc bfc" id="L52" title="All 2 branches covered.">        if (node == null) {</span>
+<span class="fc" id="L53">            return false; </span>
+        }
+
+<span class="fc" id="L56">        int compRes = data.compareTo(node.data);</span>
+<span class="fc bfc" id="L57" title="All 2 branches covered.">        if (compRes &lt; 0) {</span>
+<span class="fc" id="L58">            return containsRecur(node.left, data); </span>
+<span class="fc bfc" id="L59" title="All 2 branches covered.">        } else if (compRes &gt; 0) {</span>
+<span class="fc" id="L60">            return containsRecur(node.right, data); </span>
+        } else {
+<span class="fc" id="L62">            return true; </span>
+        }
+    }
+
+    public void insert(T data) {
+
+<span class="fc" id="L68">        root = Recinsert(root, data);</span>
+<span class="fc" id="L69">    }</span>
+
+    private BinaryNode&lt;T&gt; Recinsert(BinaryNode&lt;T&gt; node, T data) {
+<span class="fc bfc" id="L72" title="All 2 branches covered.">        if (node == null) {</span>
+<span class="fc" id="L73">            return new BinaryNode&lt;&gt;(data);</span>
+        }
+    
+<span class="fc" id="L76">        int compRes = data.compareTo(node.data);</span>
+<span class="fc bfc" id="L77" title="All 2 branches covered.">        if (compRes &lt; 0) {</span>
+<span class="fc" id="L78">            node.left = Recinsert(node.left, data);</span>
+<span class="fc bfc" id="L79" title="All 2 branches covered.">        } else if (compRes &gt; 0) {</span>
+<span class="fc" id="L80">            node.right = Recinsert(node.right, data);</span>
+        }
+        
+<span class="fc" id="L83">        return node;</span>
+        
+    }
+
+
+    public int getHeight() {
+<span class="fc" id="L89">        return getHeightRec(root);</span>
+    }
+
+
+    private int getHeightRec(BinaryNode&lt;T&gt; node){
+<span class="fc bfc" id="L94" title="All 2 branches covered.">        if (node == null) {</span>
+<span class="fc" id="L95">            return 0; </span>
+        }
+    
+<span class="fc" id="L98">        int leftHeight = getHeightRec(node.left);</span>
+<span class="fc" id="L99">        int rightHeight = getHeightRec(node.right);</span>
+    
+        
+<span class="fc" id="L102">        return Math.max(leftHeight, rightHeight) + 1;</span>
+    }
+
+    public String printSearchPath(T data) {
+
+<span class="fc" id="L107">        StringBuilder SearchPath = new StringBuilder();</span>
+<span class="fc" id="L108">        printSearchPathRec(root, data, SearchPath);</span>
+<span class="fc" id="L109">        return SearchPath.toString();</span>
+    }
+
+    private boolean  printSearchPathRec(BinaryNode&lt;T&gt; node, T data , StringBuilder SearchPath) {
+<span class="fc bfc" id="L113" title="All 2 branches covered.">        if (node == null) {</span>
+<span class="fc" id="L114">            SearchPath.append(&quot;Null&quot;);</span>
+<span class="fc" id="L115">            return false;</span>
+        }
+    
+<span class="fc" id="L118">        SearchPath.append(node.data);</span>
+<span class="fc bfc" id="L119" title="All 2 branches covered.">        if (data.compareTo(node.data) == 0) {</span>
+<span class="fc" id="L120">            return true;</span>
+        }
+    
+<span class="fc" id="L123">        SearchPath.append(&quot; -&gt; &quot;);</span>
+    
+<span class="fc bfc" id="L125" title="All 2 branches covered.">        if (data.compareTo(node.data) &lt; 0) {</span>
+<span class="fc" id="L126">            return printSearchPathRec(node.left, data, SearchPath);</span>
+        } else {
+<span class="fc" id="L128">            return printSearchPathRec(node.right, data, SearchPath);</span>
+        }
+    }
+
+    public int getNumLeaves() {
+<span class="fc" id="L133">        return getNumLeavesRec(root);</span>
+    }
+
+    private int getNumLeavesRec(BinaryNode&lt;T&gt; node) {
+<span class="fc bfc" id="L137" title="All 2 branches covered.">        if (node == null) {</span>
+<span class="fc" id="L138">            return 0;</span>
+        }
+    
+<span class="fc bfc" id="L141" title="All 4 branches covered.">        if (node.left == null &amp;&amp; node.right == null) {</span>
+<span class="fc" id="L142">            return 1;</span>
+        }
+    
+<span class="fc" id="L145">        int leftLeaves = getNumLeavesRec(node.left);</span>
+<span class="fc" id="L146">        int rightLeaves = getNumLeavesRec(node.right);</span>
+    
+<span class="fc" id="L148">        return leftLeaves + rightLeaves;</span>
+    }
+
+    public BST&lt;T&gt; extractBiggestSuperficiallyBalancedSubTree() {
+<span class="fc" id="L152">        BinaryNode&lt;T&gt; result = extractBiggestSuperficiallyBalancedSubTreeRec(root);</span>
+<span class="fc" id="L153">        BST&lt;T&gt; newTree = new BST&lt;&gt;();</span>
+<span class="fc bfc" id="L154" title="All 2 branches covered.">        if (result != null) {</span>
+<span class="fc" id="L155">            cloneTree(result, newTree);</span>
+        }
+<span class="fc" id="L157">        return newTree;</span>
+    }
+
+    private BinaryNode&lt;T&gt; extractBiggestSuperficiallyBalancedSubTreeRec(BinaryNode&lt;T&gt; node) {
+<span class="fc bfc" id="L161" title="All 2 branches covered.">        if (node == null) {</span>
+<span class="fc" id="L162">            return null;</span>
+        }
+
+<span class="fc" id="L165">        BinaryNode&lt;T&gt; leftResult = extractBiggestSuperficiallyBalancedSubTreeRec(node.left);</span>
+<span class="fc" id="L166">        BinaryNode&lt;T&gt; rightResult = extractBiggestSuperficiallyBalancedSubTreeRec(node.right);</span>
+
+    
+<span class="fc" id="L169">        int leftCount = CountNodes(leftResult);</span>
+<span class="fc" id="L170">        int rightCount = CountNodes(rightResult);</span>
+
+<span class="fc" id="L172">        boolean leftisBalanced = isSuperficiallyBalancedRec(node.left);</span>
+<span class="fc" id="L173">        boolean rightisBalanced = isSuperficiallyBalancedRec(node.right);</span>
+<span class="fc" id="L174">        boolean isBalanced = isSuperficiallyBalancedRec(node);</span>
+
+
+            
+<span class="fc bfc" id="L178" title="All 4 branches covered.">        if (leftCount &gt; rightCount &amp;&amp; leftisBalanced) {</span>
+<span class="fc" id="L179">            return leftResult;</span>
+        }
+
+<span class="fc bfc" id="L182" title="All 4 branches covered.">        else if (rightCount &gt; leftCount &amp;&amp; rightisBalanced) {</span>
+<span class="fc" id="L183">            return rightResult;</span>
+        }
+
+<span class="fc bfc" id="L186" title="All 2 branches covered.">        else if (isBalanced) {</span>
+<span class="fc" id="L187">            return node;</span>
+        }
+        
+<span class="fc" id="L190">        return null ;</span>
+        
+
+        
+
+
+    }
+    
+
+
+    private void cloneTree(BinaryNode&lt;T&gt; node, BST&lt;T&gt; newTree) {
+<span class="fc bfc" id="L201" title="All 2 branches covered.">        if (node == null) {</span>
+<span class="fc" id="L202">            return;</span>
+        }
+<span class="fc" id="L204">        newTree.insert(node.data);</span>
+<span class="fc" id="L205">        cloneTree(node.left, newTree);</span>
+<span class="fc" id="L206">        cloneTree(node.right, newTree);</span>
+<span class="fc" id="L207">    }</span>
+
+
+
+    public BinaryNode&lt;T&gt; getNode(T data) {
+
+<span class="fc" id="L213">        return getNodeRec(root , data);</span>
+    }
+
+    
+    private BinaryNode&lt;T&gt; getNodeRec(BinaryNode&lt;T&gt; node, T data) {
+<span class="fc bfc" id="L218" title="All 2 branches covered.">        if (node == null) {</span>
+<span class="fc" id="L219">            return null; </span>
+        }
+
+<span class="fc" id="L222">        int compRes = data.compareTo(node.data);</span>
+<span class="fc bfc" id="L223" title="All 2 branches covered.">        if (compRes &lt; 0) {</span>
+<span class="fc" id="L224">            return getNodeRec(node.left, data); </span>
+<span class="fc bfc" id="L225" title="All 2 branches covered.">        } else if (compRes &gt; 0) {</span>
+<span class="fc" id="L226">            return getNodeRec(node.right, data); </span>
+        } else {
+<span class="fc" id="L228">            return node; </span>
+        }
+    }
+
+    public boolean isSuperficiallyBalanced() {
+<span class="fc" id="L233">        return isSuperficiallyBalancedRec(root);</span>
+    }
+
+    private boolean isSuperficiallyBalancedRec(BinaryNode&lt;T&gt; node){
+<span class="fc bfc" id="L237" title="All 2 branches covered.">        if (node == null) {</span>
+<span class="fc" id="L238">            return true; </span>
+        }
+
+<span class="fc" id="L241">        int subleftcount = CountNodes(node.left);</span>
+<span class="fc" id="L242">        int subrightcount = CountNodes(node.right);</span>
+
+<span class="fc bfc" id="L244" title="All 2 branches covered.">        if (subleftcount == subrightcount){</span>
+<span class="fc" id="L245">            return true ;</span>
+        }
+
+<span class="fc" id="L248">        return false ;</span>
+
+    }
+
+    private int CountNodes(BinaryNode&lt;T&gt; node){
+<span class="fc bfc" id="L253" title="All 2 branches covered.">        if (node == null){</span>
+<span class="fc" id="L254">            return 0;</span>
+        }
+
+<span class="fc" id="L257">        return 1 + CountNodes(node.left) + CountNodes(node.right);</span>
+    }
+
+
+
+    public BinaryNode&lt;T&gt; findMax() {
+<span class="fc" id="L263">        return findmaxRec(root);</span>
+    }
+
+    private BinaryNode&lt;T&gt; findmaxRec(BinaryNode&lt;T&gt; node){
+<span class="fc bfc" id="L267" title="All 2 branches covered.">        if(node == null){</span>
+<span class="fc" id="L268">            return null ;</span>
+        }
+<span class="fc bfc" id="L270" title="All 2 branches covered.">        else if(node.right == null) {</span>
+<span class="fc" id="L271">            return node ;</span>
+        }
+<span class="fc" id="L273">        return findmaxRec( node.right );</span>
+    }
+
+    public BinaryNode&lt;T&gt; findMin() {
+<span class="fc" id="L277">        return findminRec(root);</span>
+ 
+    }
+
+    private BinaryNode&lt;T&gt; findminRec(BinaryNode&lt;T&gt; node){
+<span class="fc bfc" id="L282" title="All 2 branches covered.">        if(node == null){</span>
+<span class="fc" id="L283">            return null ;</span>
+        }
+<span class="fc bfc" id="L285" title="All 2 branches covered.">        else if(node.left == null) {</span>
+<span class="fc" id="L286">            return node ;</span>
+        }
+<span class="fc" id="L288">        return findminRec( node.left );</span>
+    }
+
+    ///////////////
+
+    private StringBuilder toString(BinaryNode&lt;T&gt; node, StringBuilder prefix, boolean isTail, StringBuilder sb) {
+<span class="fc bfc" id="L294" title="All 2 branches covered.">        if (node.right != null) {</span>
+<span class="fc bfc" id="L295" title="All 2 branches covered.">            toString(node.right, new StringBuilder().append(prefix).append(isTail ? &quot;│   &quot; : &quot;    &quot;), false, sb);</span>
+        }
+<span class="fc bfc" id="L297" title="All 2 branches covered.">        sb.append(prefix).append(isTail ? &quot;└── &quot; : &quot;┌── &quot;).append(node.data.toString()).append(&quot;\n&quot;);</span>
+<span class="fc bfc" id="L298" title="All 2 branches covered.">        if (node.left != null) {</span>
+<span class="fc bfc" id="L299" title="All 2 branches covered.">            toString(node.left, new StringBuilder().append(prefix).append(isTail ? &quot;    &quot; : &quot;│   &quot;), true, sb);</span>
+        }
+<span class="fc" id="L301">        return sb;</span>
+    }
+
+    @Override
+    public String toString() {
+<span class="fc bfc" id="L306" title="All 2 branches covered.">        return root == null ? &quot;Empty tree&quot; : toString(root, new StringBuilder(), true, new StringBuilder()).toString();</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

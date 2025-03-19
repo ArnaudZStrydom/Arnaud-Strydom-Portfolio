@@ -1,0 +1,263 @@
+body {
+  
+  background-color: white;
+  
+  
+}
+
+body.dark-mode {
+  background-color: black;
+}
+@font-face {
+  font-family: 'Monseratt';
+  src: url('Montserrat-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Playfair';
+  src: url('PlayfairDisplay-Regular.ttf') format('truetype');
+
+}
+.logo{
+  width: 55px;
+  height: auto;
+ 
+  
+}
+
+.navbar {
+  display: flex;
+  background-color: black;
+  overflow: hidden;
+  
+}
+
+.navbar a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background-color: rgb(223, 196, 75);
+  color: black;
+}
+
+.navbar a.current {
+  background-color: rgb(223, 196, 75);
+  color: black;
+}
+
+.navbar input[type=text] {
+  padding: 6px;
+  margin-top: 9px;
+  margin-bottom: 9px;
+  margin-left: 150px;
+  font-size: 15px;
+  border: 1px solid #000000;
+}
+
+@media screen and (max-width: 600px) {
+  .navbar a  .navbar input[type=text] {
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+}
+
+
+#flex-container {
+  display: flex;
+  height: 200px;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(223, 196, 75);
+  
+}
+
+.dropbtn {
+  font-family:'Monseratt' , Arial, Helvetica, sans-serif;
+  background-color: black;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  font-family:'Monseratt' , Arial, Helvetica, sans-serif;
+  position: relative;
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.dropdowncont {
+  font-family:'Monseratt' , Arial, Helvetica, sans-serif;
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdowncont .dropdown-item {
+  display: block;
+  padding: 12px 16px;
+  cursor: pointer;
+}
+
+.dropdowncont .dropdown-item:hover {
+ background-color: grey;
+}
+
+
+.dropdowncont .dropdown-item.selected {
+  background-color: grey; 
+}
+
+.dropdown:hover .dropdowncont {
+  display: block;
+}
+
+.dropdown:hover  .dropbtn {
+  background-color: rgb(223, 196, 75);
+  border-color: #000000;
+}
+
+.alllistings {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+  border-color: #000000;
+}
+
+@media (prefers-color-scheme: dark) {
+  .alllistings.dark-mode {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+    border-color: rgb(223, 196, 75);
+  }
+
+  .details.dark-mode {
+    font-family: 'Monseratt', 'serif';
+    padding: 10px;
+    color: white;
+  }
+}
+
+.singlelisting {
+  width: 300px;
+  margin-bottom: 20px;
+  border: 0.5px solid black;
+  box-shadow: 1px 10px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  overflow: hidden;
+  background-color:  white ;
+}
+
+.singlelisting.dark-mode {
+  width: 300px;
+  margin-bottom: 20px;
+  border: 0.5px solid rgb(223, 196, 75);
+  box-shadow: 1px 10px 15px rgb(223, 196, 75);
+  border-radius: 5px;
+  overflow: hidden;
+  background-color:  black ;
+}
+
+
+.singlelisting img {
+  width: 100%;
+  height: 45%;
+}
+
+.details {
+  font-family: 'Monseratt' , 'serif';
+  padding: 10px;
+}
+
+.details.dark-mode {
+  font-family: 'Monseratt' , 'serif';
+  padding: 10px;
+  color: white;
+}
+.details h2 {
+  font-family: 'Playfair' , 'serif';
+  color: #333;
+}
+
+.details.dark-mode h2 {
+  font-family: 'Playfair' , 'serif';
+  color: rgb(223, 196, 75);
+}
+
+.favoritebtn {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.favoritebtn:hover {
+  background-color: #ff4646;
+}
+
+
+.singlelisting a:link, a:visited {
+  font-family:'Monseratt' , Arial, Helvetica, sans-serif;
+  background-color: black;
+  color: white;
+  padding: 10px;
+  font-size: 13px;
+  border: none;
+  display: inline-block;
+  text-align: center;
+
+}
+
+.singlelisting a:hover, a:active {
+  background-color: rgb(223, 196, 75);
+  color: black;
+}
+
+.loader {
+  display: block;
+  height: 500px;
+  width:500px;
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.flex-container a:hover ,button:hover {
+  background-color: rgb(223, 196, 75);
+  color: black;
+}
+
+
+button {
+  padding: 8.5px;
+  margin: 2px;
+  background-color:black ;
+  border-color: rgb(223, 196, 75);
+  color: white;
+  text-align: center;
+  font-size: 17px;
+  cursor: pointer;
+
+}
+
+
+
+
+
+

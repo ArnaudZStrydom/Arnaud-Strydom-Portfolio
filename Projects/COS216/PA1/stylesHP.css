@@ -1,0 +1,77 @@
+body {
+    background-color: white;
+  }
+
+  @font-face {
+    font-family: 'Monseratt';
+    src: url('Montserrat-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Playfair';
+    src: url('PlayfairDisplay-Regular.ttf') format('truetype');
+}
+
+  
+  .flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(223, 196, 75);
+    height: 150px;
+  }
+
+  h1 {
+    font-family: 'Playfair', serif;
+    text-align: center;
+    color: black;
+    font-size: 28px; 
+}
+
+h2 {
+    font-family: 'Playfair', sans-serif; 
+    text-align: center;
+    color: black; 
+    font-weight: bold; 
+}
+
+
+  .flex-container1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(223, 196, 75);
+    height: 200px;
+  }
+
+  .flex-container2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+  }
+  
+  .flex-container a:hover ,button:hover {
+    background-color: rgb(223, 196, 75);
+    color: black;
+  }
+  
+  
+  button {
+    padding: 8.5px;
+    margin: 2px;
+    background-color:black ;
+    border-color: rgb(223, 196, 75);
+    color: white;
+    text-align: center;
+    font-size: 17px;
+    cursor: pointer;
+
+  }
+
+  
+
+  
+ 
+  

@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>SplayTree.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCo Coverage Report</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">SplayTree.java</span></div><h1>SplayTree.java</h1><pre class="source lang-java linenums">public class SplayTree {
+    public Node root;
+    /*
+     * The functions below this line was given
+     */
+
+    @Override
+    public String toString() {
+<span class="pc bpc" id="L9" title="1 of 2 branches missed.">        return (root == null ? &quot;Empty Tree&quot; : toString(root, &quot;&quot;, true));</span>
+    }
+
+    public String toString(Node node, String prefix, boolean end) {
+<span class="fc" id="L13">        String res = &quot;&quot;;</span>
+<span class="fc bfc" id="L14" title="All 2 branches covered.">        if (node.right != null) {</span>
+<span class="fc bfc" id="L15" title="All 2 branches covered.">            res += toString(node.right, prefix + (end ? &quot;│   &quot; : &quot;    &quot;), false);</span>
+        }
+<span class="fc bfc" id="L17" title="All 2 branches covered.">        res += prefix + (end ? &quot;└── &quot; : &quot;┌── &quot;) + node.toString() + &quot;\n&quot;;</span>
+<span class="fc bfc" id="L18" title="All 2 branches covered.">        if (node.left != null) {</span>
+<span class="fc bfc" id="L19" title="All 2 branches covered.">            res += toString(node.left, prefix + (end ? &quot;    &quot; : &quot;│   &quot;), true);</span>
+        }
+<span class="fc" id="L21">        return res;</span>
+    }
+
+    public String toStringOneLine() {
+<span class="pc bpc" id="L25" title="1 of 2 branches missed.">        return (root == null ? &quot;Empty Tree&quot; : &quot;{&quot; + toStringOneLine(root) + &quot;}&quot;);</span>
+    }
+
+    public String toStringOneLine(Node node) {
+<span class="fc bfc" id="L29" title="All 2 branches covered.">        return node.toString()</span>
+<span class="fc bfc" id="L30" title="All 2 branches covered.">                + (node.left == null ? &quot;{}&quot; : &quot;{&quot; + toStringOneLine(node.left) + &quot;}&quot;)</span>
+<span class="fc" id="L31">                + (node.right == null ? &quot;{}&quot; : &quot;{&quot; + toStringOneLine(node.right) + &quot;}&quot;);</span>
+    }
+
+<span class="nc" id="L34">    public SplayTree() {</span>
+<span class="nc" id="L35">        root = null;</span>
+<span class="nc" id="L36">    }</span>
+
+    /*
+     * The functions above this line was given
+     */
+
+<span class="fc" id="L42">    public SplayTree(String input) {</span>
+<span class="pc bpc" id="L43" title="1 of 2 branches missed.">        if (input.equals(&quot;Empty Tree&quot;)) {</span>
+        } else {
+<span class="fc" id="L45">            root = null ;</span>
+<span class="fc" id="L46">            insertNodes(input);</span>
+            
+        }
+<span class="fc" id="L49">    }</span>
+
+    private void insertNodes(String input) {
+<span class="fc" id="L52">        int startIndex = input.indexOf(&quot;[&quot;);</span>
+<span class="fc bfc" id="L53" title="All 2 branches covered.">        while (startIndex != -1) {</span>
+<span class="fc" id="L54">            int endIndex = input.indexOf(&quot;]&quot;, startIndex);</span>
+<span class="fc" id="L55">            String nodeString = input.substring(startIndex + 1, endIndex);</span>
+<span class="fc" id="L56">            insert(parseNode(nodeString));</span>
+<span class="fc" id="L57">            startIndex = input.indexOf(&quot;[&quot;, endIndex + 1); </span>
+<span class="fc" id="L58">        }</span>
+<span class="fc" id="L59">    }</span>
+
+    private Node parseNode(String nodeString) {
+<span class="fc" id="L62">        int colonIndex = nodeString.indexOf(&quot;:&quot;);</span>
+<span class="fc" id="L63">        int studentNumber = Integer.parseInt(nodeString.substring(1, colonIndex)); </span>
+<span class="fc" id="L64">        Integer mark = null;</span>
+<span class="fc" id="L65">        int percentIndex = nodeString.indexOf('%', colonIndex);</span>
+<span class="fc" id="L66">        String nullstr = nodeString.substring(colonIndex + 1, percentIndex + 1);</span>
+<span class="pc bpc" id="L67" title="1 of 2 branches missed.">        if( nullstr.equals(&quot;null%&quot;)){</span>
+<span class="nc" id="L68">            mark = null ;</span>
+        }
+<span class="pc bpc" id="L70" title="1 of 2 branches missed.">        else if (percentIndex != -1) {</span>
+<span class="fc" id="L71">            mark = Integer.parseInt(nodeString.substring(colonIndex + 1, percentIndex)); </span>
+        }
+
+<span class="fc" id="L74">        return new Node(studentNumber, mark);</span>
+    }
+
+    private void insert(Node newNode) {
+<span class="fc bfc" id="L78" title="All 2 branches covered.">        if (root == null) {</span>
+<span class="fc" id="L79">            root = newNode;</span>
+<span class="fc" id="L80">            return;</span>
+        }
+<span class="fc" id="L82">        insertNode(root, newNode);</span>
+<span class="fc" id="L83">    }</span>
+
+    private void insertNode(Node current, Node newNode) {
+<span class="fc bfc" id="L86" title="All 2 branches covered.">        if (newNode.compareTo(current) &lt; 0) {</span>
+<span class="fc bfc" id="L87" title="All 2 branches covered.">            if (current.left == null) {</span>
+<span class="fc" id="L88">                current.left = newNode;</span>
+            } else {
+<span class="fc" id="L90">                insertNode(current.left, newNode);</span>
+            }
+        } else {
+<span class="fc bfc" id="L93" title="All 2 branches covered.">            if (current.right == null) {</span>
+<span class="fc" id="L94">                current.right = newNode;</span>
+            } else {
+<span class="fc" id="L96">                insertNode(current.right, newNode);</span>
+            }
+        }
+<span class="fc" id="L99">    }</span>
+
+
+
+
+
+    public Node access(int studentNumber) {
+<span class="fc" id="L106">        return access(studentNumber, null);</span>
+    }
+
+    public Node access(int studentNumber, Integer mark) {
+<span class="fc bfc" id="L110" title="All 4 branches covered.">        if(contains(studentNumber) &amp;&amp; mark != null){</span>
+<span class="fc" id="L111">            root = splay(root , studentNumber );</span>
+<span class="fc" id="L112">            updatemark(root, studentNumber, mark);</span>
+<span class="fc" id="L113">            return root ;</span>
+        }
+<span class="pc bpc" id="L115" title="1 of 4 branches missed.">        else if (contains(studentNumber) &amp;&amp; mark == null){</span>
+<span class="fc" id="L116">            root = splay(root , studentNumber );</span>
+<span class="fc" id="L117">            return root ;</span>
+        }
+        else{
+<span class="fc" id="L120">            insert(studentNumber,mark);</span>
+<span class="fc" id="L121">            root = splay(root , studentNumber );</span>
+<span class="fc" id="L122">            return root ;</span>
+        }
+
+    }
+
+    private boolean contains(Integer studentNumber) {
+<span class="fc" id="L128">        return containsRecur(root, studentNumber);</span>
+    }
+
+    private boolean containsRecur(Node node, Integer studentNumber) {
+<span class="fc bfc" id="L132" title="All 2 branches covered.">        if (node == null) {</span>
+<span class="fc" id="L133">            return false; </span>
+        }
+
+<span class="fc" id="L136">        int compRes = studentNumber.compareTo(node.studentNumber);</span>
+<span class="fc bfc" id="L137" title="All 2 branches covered.">        if (compRes &lt; 0) {</span>
+<span class="fc" id="L138">            return containsRecur(node.left, studentNumber); </span>
+<span class="fc bfc" id="L139" title="All 2 branches covered.">        } else if (compRes &gt; 0) {</span>
+<span class="fc" id="L140">            return containsRecur(node.right, studentNumber); </span>
+        } else {
+<span class="fc" id="L142">            return true; </span>
+        }
+    }
+
+
+
+    private void updatemark(Node node, Integer studentNumber , Integer mark){
+<span class="pc bpc" id="L149" title="1 of 2 branches missed.">        while(node != null ){</span>
+<span class="fc" id="L150">            int compRes = studentNumber.compareTo(node.studentNumber);</span>
+<span class="pc bpc" id="L151" title="1 of 2 branches missed.">            if(compRes == 0){</span>
+<span class="fc" id="L152">                node.mark = mark ;</span>
+<span class="fc" id="L153">                return;</span>
+            }
+<span class="nc bnc" id="L155" title="All 2 branches missed.">            else if (compRes &lt; 0) {</span>
+<span class="nc" id="L156">                node = node.left;</span>
+<span class="nc bnc" id="L157" title="All 2 branches missed.">            } else if (compRes &gt; 0) {</span>
+<span class="nc" id="L158">                node = node.right ;</span>
+            }
+<span class="nc" id="L160">        }</span>
+<span class="nc" id="L161">    }</span>
+
+
+
+    private Node splay(Node root, int studentNumber) {
+<span class="pc bpc" id="L166" title="1 of 4 branches missed.">        if (root == null || root.studentNumber == studentNumber)</span>
+<span class="fc" id="L167">        return root;</span>
+
+<span class="fc bfc" id="L169" title="All 2 branches covered.">    if (root.studentNumber &gt; studentNumber) {</span>
+<span class="pc bpc" id="L170" title="1 of 2 branches missed.">        if (root.left == null)</span>
+<span class="nc" id="L171">            return root;</span>
+<span class="fc bfc" id="L172" title="All 2 branches covered.">        if (root.left.studentNumber &gt; studentNumber) {</span>
+<span class="fc" id="L173">            root.left.left = splay(root.left.left, studentNumber);</span>
+<span class="fc" id="L174">            root = rightRotate(root);</span>
+        }
+<span class="pc bpc" id="L176" title="1 of 2 branches missed.">        else if (root.left.studentNumber &lt; studentNumber) {</span>
+<span class="nc" id="L177">            root.left.right = splay(root.left.right, studentNumber);</span>
+<span class="nc bnc" id="L178" title="All 2 branches missed.">            if (root.left.right != null)</span>
+<span class="nc" id="L179">                root.left = leftRotate(root.left);</span>
+        }
+<span class="pc bpc" id="L181" title="1 of 2 branches missed.">        return (root.left == null) ? root : rightRotate(root);</span>
+    }
+    else {
+<span class="pc bpc" id="L184" title="1 of 2 branches missed.">        if (root.right == null)</span>
+<span class="nc" id="L185">            return root;</span>
+<span class="fc bfc" id="L186" title="All 2 branches covered.">        if (root.right.studentNumber &gt; studentNumber) {</span>
+<span class="fc" id="L187">            root.right.left = splay(root.right.left, studentNumber);</span>
+<span class="pc bpc" id="L188" title="1 of 2 branches missed.">            if (root.right.left != null)</span>
+<span class="fc" id="L189">                root.right = rightRotate(root.right);</span>
+        }
+<span class="fc bfc" id="L191" title="All 2 branches covered.">        else if (root.right.studentNumber &lt; studentNumber) {</span>
+<span class="fc" id="L192">            root.right.right = splay(root.right.right, studentNumber);</span>
+<span class="fc" id="L193">            root = leftRotate(root);</span>
+        }
+<span class="pc bpc" id="L195" title="1 of 2 branches missed.">        return (root.right == null) ? root : leftRotate(root);</span>
+    }
+}
+
+    private void insert( int studentNumber , Integer mark) {
+
+<span class="fc" id="L201">        root = Recinsert(root, studentNumber , mark);</span>
+<span class="fc" id="L202">    }</span>
+
+    private Node Recinsert(Node node  , Integer studentNumber , Integer mark) {
+<span class="fc bfc" id="L205" title="All 2 branches covered.">        if (node == null) {</span>
+<span class="fc" id="L206">            return new Node(studentNumber,mark);</span>
+        }
+    
+<span class="fc" id="L209">        int compRes = studentNumber.compareTo(node.studentNumber);</span>
+<span class="fc bfc" id="L210" title="All 2 branches covered.">        if (compRes &lt; 0) {</span>
+<span class="fc" id="L211">            node.left = Recinsert(node.left, studentNumber , mark);</span>
+<span class="pc bpc" id="L212" title="1 of 2 branches missed.">        } else if (compRes &gt; 0) {</span>
+<span class="fc" id="L213">            node.right = Recinsert(node.right, studentNumber,mark);</span>
+        }
+        
+<span class="fc" id="L216">        return node;</span>
+        
+    }
+
+    static Node rightRotate(Node x) {
+<span class="fc" id="L221">        Node y = x.left;</span>
+<span class="fc" id="L222">        x.left = y.right;</span>
+<span class="fc" id="L223">        y.right = x;</span>
+<span class="fc" id="L224">        return y;</span>
+    }
+ 
+    static Node leftRotate(Node x) {
+<span class="fc" id="L228">        Node y = x.right;</span>
+<span class="fc" id="L229">        x.right = y.left;</span>
+<span class="fc" id="L230">        y.left = x;</span>
+<span class="fc" id="L231">        return y;</span>
+    }
+
+    public Node remove(int studentNumber) {
+        
+<span class="nc" id="L236">    Node removedNode = access(studentNumber);</span>
+<span class="nc" id="L237">    System.out.println(this.toString()+&quot;\n&quot;);</span>
+    
+<span class="nc bnc" id="L239" title="All 2 branches missed.">    if (removedNode == null) {</span>
+<span class="nc" id="L240">        return null;</span>
+    }
+    
+<span class="nc" id="L243">    root = removedNode.left;</span>
+<span class="nc" id="L244">    System.out.println(this.toString()+&quot;\n&quot;);</span>
+
+<span class="nc bnc" id="L246" title="All 2 branches missed.">    if (root == null) {</span>
+<span class="nc" id="L247">        root = removedNode.right;</span>
+    } else {
+<span class="nc" id="L249">        Node largestNode = findLargestNode(root);</span>
+<span class="nc" id="L250">        root = access(largestNode.studentNumber);</span>
+<span class="nc" id="L251">        System.out.println(this.toString()+&quot;\n&quot;);</span>
+<span class="nc" id="L252">        root.right = removedNode.right;</span>
+<span class="nc" id="L253">        System.out.println(this.toString()+&quot;\n&quot;);</span>
+    }
+    
+    
+<span class="nc" id="L257">    return removedNode;</span>
+}
+
+private Node findLargestNode(Node node) {
+<span class="nc bnc" id="L261" title="All 2 branches missed.">    while (node.right != null) {</span>
+<span class="nc" id="L262">        node = node.right;</span>
+    }
+<span class="nc" id="L264">    return node;</span>
+}
+
+    public String sortByStudentNumber() {
+<span class="fc" id="L268">        StringBuilder sortedTree = new StringBuilder();</span>
+<span class="fc" id="L269">        sortedTree.append(sortByStudentNumberRec(root));</span>
+<span class="fc" id="L270">        return sortedTree.toString();</span>
+    }
+
+    private String sortByStudentNumberRec(Node node) {
+<span class="fc bfc" id="L274" title="All 2 branches covered.">        if (node == null) {</span>
+<span class="fc" id="L275">            return &quot;&quot;;</span>
+        }
+<span class="fc" id="L277">        StringBuilder result = new StringBuilder();</span>
+<span class="fc" id="L278">        result.append(sortByStudentNumberRec(node.left));</span>
+<span class="fc" id="L279">        result.append(node.toString());</span>
+<span class="fc" id="L280">        result.append(sortByStudentNumberRec(node.right));</span>
+<span class="fc" id="L281">        return result.toString();</span>
+    }
+
+
+    public String sortByMark() {
+        
+<span class="fc" id="L287">        StringBuilder nodeListAsString = new StringBuilder();</span>
+<span class="fc" id="L288">        traverse(root, nodeListAsString);</span>
+<span class="fc" id="L289">        String[] nodeArray = nodeListAsString.toString().split(&quot;]&quot;);</span>
+        
+<span class="fc" id="L291">        bubbleSortByMark(nodeArray);</span>
+       
+<span class="fc" id="L293">        StringBuilder sortedTree = new StringBuilder();</span>
+<span class="fc bfc" id="L294" title="All 2 branches covered.">        for (int i = 0; i &lt; nodeArray.length; i++) {</span>
+            
+<span class="fc" id="L296">            sortedTree.append(nodeArray[i]);</span>
+<span class="fc" id="L297">            sortedTree.append(&quot;]&quot;);</span>
+            
+        }
+<span class="fc" id="L300">        return sortedTree.toString();</span>
+    }
+    
+    
+    private void traverse(Node node, StringBuilder nodeListAsString) {
+<span class="fc bfc" id="L305" title="All 2 branches covered.">        if (node != null) {</span>
+<span class="fc" id="L306">            traverse(node.left, nodeListAsString);</span>
+<span class="fc" id="L307">            nodeListAsString.append(node.toString()); </span>
+<span class="fc" id="L308">            traverse(node.right, nodeListAsString);</span>
+        }
+<span class="fc" id="L310">    }</span>
+    
+    
+    private void bubbleSortByMark(String[] nodeArray) {
+<span class="fc" id="L314">        int n = nodeArray.length;</span>
+<span class="fc bfc" id="L315" title="All 2 branches covered.">        for (int i = 0; i &lt; n - 1; i++) {</span>
+<span class="fc bfc" id="L316" title="All 2 branches covered.">            for (int j = 0; j &lt; n - i - 1; j++) {</span>
+<span class="fc" id="L317">                int mark1 = extractMark(nodeArray[j]);</span>
+<span class="fc" id="L318">                int mark2 = extractMark(nodeArray[j + 1]);</span>
+<span class="pc bpc" id="L319" title="2 of 6 branches missed.">                if (mark1 != -1 &amp;&amp; (mark2 == -1 || mark1 &gt; mark2)) { </span>
+<span class="fc" id="L320">                    String temp = nodeArray[j];</span>
+<span class="fc" id="L321">                    nodeArray[j] = nodeArray[j + 1];</span>
+<span class="fc" id="L322">                    nodeArray[j + 1] = temp;</span>
+                }
+            }
+        }
+<span class="fc" id="L326">    }</span>
+    
+
+    private int extractMark(String nodeString) {
+<span class="fc" id="L330">        int colonIndex = nodeString.indexOf(':');</span>
+<span class="fc" id="L331">        int percentIndex = nodeString.indexOf('%');</span>
+<span class="pc bpc" id="L332" title="2 of 4 branches missed.">        if (colonIndex != -1 &amp;&amp; percentIndex != -1) {</span>
+            try {
+<span class="fc bfc" id="L334" title="All 2 branches covered.">                if (nodeString.substring(colonIndex + 1, percentIndex).equals(&quot;null&quot;)) {</span>
+<span class="fc" id="L335">                    return Integer.MIN_VALUE; </span>
+                } else {
+<span class="fc" id="L337">                    return Integer.parseInt(nodeString.substring(colonIndex + 1, percentIndex));</span>
+                }
+<span class="nc" id="L339">            } catch (NumberFormatException e) {</span>
+<span class="nc" id="L340">                return -1; </span>
+            }
+        }
+<span class="nc" id="L343">        return -1; </span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

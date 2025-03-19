@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Maze.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCo Coverage Report</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">Maze.java</span></div><h1>Maze.java</h1><pre class="source lang-java linenums">import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+
+public class Maze {
+    private String[] map;
+
+<span class="fc" id="L9">    public Maze(String filename) {</span>
+        try{
+
+<span class="fc" id="L12">            File myFile = new File(filename);</span>
+<span class="fc" id="L13">            Scanner myScanner = new Scanner(myFile);</span>
+
+<span class="fc" id="L15">            int numRows = Integer.parseInt(myScanner.nextLine());</span>
+
+<span class="fc" id="L17">            map = new String[numRows];</span>
+
+<span class="fc" id="L19">            MazeConstrRec(myScanner , 0);</span>
+
+<span class="fc" id="L21">            myScanner.close() ;</span>
+
+<span class="nc" id="L23">        }catch (FileNotFoundException e){</span>
+<span class="nc" id="L24">            map = new String[0];</span>
+<span class="fc" id="L25">        }</span>
+<span class="fc" id="L26">    }</span>
+
+    private void MazeConstrRec(Scanner myScanner , int rowIdx){
+<span class="pc bpc" id="L29" title="1 of 4 branches missed.">        if(rowIdx &lt; map.length &amp;&amp; myScanner.hasNextLine()){</span>
+<span class="fc" id="L30">            map[rowIdx] = myScanner.nextLine();</span>
+<span class="fc" id="L31">            MazeConstrRec(myScanner , rowIdx + 1);</span>
+        }
+<span class="fc" id="L33">    }</span>
+
+
+
+<span class="fc" id="L37">    public Maze(Maze other) {</span>
+
+<span class="fc" id="L39">        map = new String[other.map.length];</span>
+<span class="fc" id="L40">        CopyMazeRec(other,0);</span>
+<span class="fc" id="L41">    }</span>
+
+    private void CopyMazeRec(Maze other , int rowIdx){
+<span class="fc bfc" id="L44" title="All 2 branches covered.">        if(rowIdx &lt; map.length){</span>
+<span class="fc" id="L45">            map[rowIdx] = other.map[rowIdx];</span>
+<span class="fc" id="L46">            CopyMazeRec(other , rowIdx + 1);</span>
+        }
+<span class="fc" id="L48">    }</span>
+
+    @Override
+    public String toString() {
+<span class="fc" id="L52">        StringBuilder MyString = new StringBuilder();</span>
+<span class="pc bpc" id="L53" title="1 of 2 branches missed.">        if(map.length == 0){</span>
+<span class="nc" id="L54">            return &quot;Empty Map&quot;;</span>
+        }
+<span class="fc" id="L56">        toStringRec(map , 0 , MyString);</span>
+<span class="fc" id="L57">        return MyString.toString() ;</span>
+    }
+
+    private void toStringRec(String [] mymap , int rowIdx , StringBuilder MyString){
+<span class="fc bfc" id="L61" title="All 2 branches covered.">        if(rowIdx &lt; map.length - 1 ){</span>
+<span class="fc" id="L62">            MyString.append(map[rowIdx]).append(&quot;\n&quot;).append(&quot;\n&quot;);</span>
+<span class="fc" id="L63">            toStringRec(map , rowIdx + 1 , MyString);</span>
+<span class="fc" id="L64">            return ;</span>
+        }
+<span class="fc" id="L66">        MyString.append(map[rowIdx]);</span>
+
+<span class="fc" id="L68">    }</span>
+
+    public boolean validSolution(int startX, int startY, int goalX, int goalY, LinkedList path) {
+<span class="fc bfc" id="L71" title="All 2 branches covered.">        if(path == null){</span>
+<span class="fc" id="L72">            return false;</span>
+        }
+<span class="pc bpc" id="L74" title="1 of 10 branches missed.">        if (startX &lt; 0 || startY &lt; 0 || startY &gt;= map.length || startX &gt;= map[startY].length() || map[startY].charAt(startX) == 'X'){</span>
+<span class="fc" id="L75">            return false;</span>
+        }
+
+<span class="pc bpc" id="L78" title="1 of 10 branches missed.">        if (goalX &lt; 0 || goalY &lt; 0 || goalY &gt;= map.length || goalX &gt;= map[goalY].length() || map[goalY].charAt(goalX) == 'X'){</span>
+<span class="fc" id="L79">            return false;</span>
+        }
+
+<span class="fc bfc" id="L82" title="All 6 branches covered.">        if (path.head == null || (path.head.x != startX || path.head.y != startY)){</span>
+<span class="fc" id="L83">            return false;</span>
+        }
+
+<span class="fc" id="L86">        CoordinateNode tail = tailNodeRec(path.head);</span>
+
+<span class="pc bpc" id="L88" title="2 of 6 branches missed.">        if (tail == null || (tail.x != goalX || tail.y != goalY)){</span>
+<span class="fc" id="L89">            return false;</span>
+        }
+
+<span class="fc" id="L92">        return validSolRec(startX, startY, goalX, goalY, path.head.next , path.head);</span>
+    }
+
+    private boolean validSolRec(int startX, int startY, int goalX,int goalY, CoordinateNode current , CoordinateNode previous){
+        
+<span class="fc bfc" id="L97" title="All 2 branches covered.">        if(current == null){</span>
+<span class="fc" id="L98">            return true ;</span>
+        }
+
+<span class="pc bpc" id="L101" title="6 of 12 branches missed.">        if (current == null || current.x &lt; 0 || current.y &lt; 0 || current.y &gt;= map.length || current.x &gt;= map[current.y].length() || map[current.y].charAt(current.x) == 'X'){</span>
+<span class="nc" id="L102">            return false;</span>
+        }
+
+<span class="fc bfc" id="L105" title="All 2 branches covered.">        if(current.x &gt;= previous.x + 2 ){</span>
+<span class="fc" id="L106">            return false;</span>
+        }
+
+<span class="pc bpc" id="L109" title="1 of 2 branches missed.">        if(current.y &gt;= previous.y + 2 ){</span>
+<span class="nc" id="L110">            return false;</span>
+        }
+
+<span class="pc bpc" id="L113" title="1 of 4 branches missed.">        if(current.y == previous.y &amp;&amp; current.x == previous.x){</span>
+<span class="nc" id="L114">            return false;</span>
+        }
+
+<span class="pc bpc" id="L117" title="1 of 4 branches missed.">        if(current.y == previous.y + 1 &amp;&amp; current.x == previous.x + 1 ){</span>
+<span class="nc" id="L118">            return false;</span>
+        }
+
+<span class="pc bpc" id="L121" title="1 of 4 branches missed.">        if(current.y == previous.y - 1 &amp;&amp; current.x == previous.x - 1 ){</span>
+<span class="nc" id="L122">            return false;</span>
+        }
+
+
+<span class="pc bpc" id="L126" title="1 of 4 branches missed.">        if(current.y == previous.y - 1 &amp;&amp; current.x == previous.x + 1 ){</span>
+<span class="nc" id="L127">            return false;</span>
+        }
+
+<span class="pc bpc" id="L130" title="1 of 4 branches missed.">        if(current.y == previous.y + 1 &amp;&amp; current.x == previous.x - 1 ){</span>
+<span class="nc" id="L131">            return false;</span>
+        }
+
+<span class="fc" id="L134">        return validSolRec(startX, startY, goalX, goalY, current.next , previous.next);</span>
+
+
+        
+    }
+
+    private CoordinateNode tailNodeRec(CoordinateNode current) {
+<span class="pc bpc" id="L141" title="1 of 4 branches missed.">        if (current == null || current.next == null)</span>
+<span class="fc" id="L142">            return current;</span>
+<span class="fc" id="L143">        return tailNodeRec(current.next);</span>
+    }
+
+
+    public String solve(int x, int y, int goalX, int goalY) {
+<span class="fc" id="L148">        LinkedList sol = new LinkedList();</span>
+<span class="fc" id="L149">        solveRec(x, y, goalX, goalY, sol);</span>
+
+<span class="pc bpc" id="L151" title="1 of 2 branches missed.">        if (sol.head == null) {</span>
+<span class="nc" id="L152">            return &quot;No valid solution exists&quot;;</span>
+        } 
+        else 
+        {
+<span class="fc" id="L156">            StringBuilder solvedsb = new StringBuilder();</span>
+
+<span class="fc" id="L158">            solvedsb.append(&quot;Solution\n&quot;);</span>
+
+<span class="fc" id="L160">            String[] solMaze = new String[map.length];</span>
+
+<span class="fc" id="L162">            System.arraycopy(map, 0, solMaze, 0, map.length);</span>
+
+<span class="fc" id="L164">            PathRec(solMaze, sol.head);</span>
+
+<span class="fc" id="L166">            solMaze[y] = solMaze[y].substring(0, x) + &quot;S&quot; + solMaze[y].substring(x + 1);</span>
+
+<span class="fc" id="L168">            solMaze[goalY] = solMaze[goalY].substring(0, goalX) + &quot;E&quot; + solMaze[goalY].substring(goalX + 1);</span>
+    
+<span class="fc" id="L170">            appendRowsRec(solMaze, 0, solvedsb);</span>
+            
+<span class="fc" id="L172">            solvedsb.append(sol.toString());</span>
+
+<span class="fc" id="L174">            return solvedsb.toString();</span>
+        }
+    }
+    
+    private void solveRec(int x, int y, int goalX, int goalY, LinkedList path) {
+        
+
+        
+        
+<span class="fc bfc" id="L183" title="All 4 branches covered.">        if (x == goalX &amp;&amp; y == goalY) {</span>
+<span class="fc" id="L184">            path.append(goalX, goalY);</span>
+<span class="fc" id="L185">            return ;</span>
+        }
+    
+<span class="pc bpc" id="L188" title="3 of 12 branches missed.">        if (x &lt; 0 || y &lt; 0 || y &gt;= map.length || x &gt;= map[y].length() || map[y].charAt(x) == 'X' || path.contains(x, y)) {</span>
+<span class="fc" id="L189">            return ;</span>
+        }
+    
+<span class="fc" id="L192">        path.append(x, y);</span>
+    
+<span class="pc bpc" id="L194" title="1 of 2 branches missed.">        if(!path.contains(goalX, goalY)){</span>
+<span class="fc" id="L195">            solveRec(x - 1, y, goalX, goalY,path);</span>
+        }
+    
+<span class="fc bfc" id="L198" title="All 2 branches covered.">        if(!path.contains(goalX, goalY)){</span>
+<span class="fc" id="L199">            solveRec(x , y - 1, goalX, goalY,path);</span>
+        }
+
+    
+<span class="fc bfc" id="L203" title="All 2 branches covered.">        if(!path.contains(goalX, goalY)){</span>
+<span class="fc" id="L204">            solveRec(x , y + 1, goalX, goalY,path);</span>
+        }
+
+<span class="fc bfc" id="L207" title="All 2 branches covered.">        if(!path.contains(goalX, goalY)){</span>
+<span class="fc" id="L208">            solveRec(x + 1, y, goalX, goalY,path);</span>
+        }
+
+    
+    
+<span class="fc" id="L213">    }</span>
+
+    
+    private void PathRec(String[] solvedMaze, CoordinateNode currentNode) {
+<span class="fc bfc" id="L217" title="All 2 branches covered.">        if (currentNode != null) {</span>
+<span class="fc" id="L218">            solvedMaze[currentNode.y] = solvedMaze[currentNode.y].substring(0, currentNode.x) + &quot;@&quot; + solvedMaze[currentNode.y].substring(currentNode.x + 1);</span>
+<span class="fc" id="L219">            PathRec(solvedMaze, currentNode.next);</span>
+        }
+<span class="fc" id="L221">    }</span>
+    
+    private void appendRowsRec(String[] solvedMaze, int rowIdx, StringBuilder result) {
+<span class="fc bfc" id="L224" title="All 2 branches covered.">        if (rowIdx &lt; solvedMaze.length - 1) {</span>
+<span class="fc" id="L225">            result.append(solvedMaze[rowIdx]).append(&quot;\n&quot;);</span>
+<span class="fc" id="L226">            appendRowsRec(solvedMaze, rowIdx + 1, result);</span>
+        } else {
+<span class="fc" id="L228">            result.append(solvedMaze[rowIdx]).append(&quot;\n&quot;);</span>
+        }
+<span class="fc" id="L230">    }</span>
+
+    public LinkedList validStarts(int x, int y) {
+<span class="fc" id="L233">        LinkedList paths = new LinkedList();</span>
+<span class="fc" id="L234">        validStartsRec(0, 0, x, y, paths);</span>
+<span class="fc" id="L235">        return paths;</span>
+    }
+
+    private void validStartsRec(int x, int y, int goalX, int goalY, LinkedList paths) {
+    
+
+    
+<span class="pc bpc" id="L242" title="3 of 12 branches missed.">        if (x &lt; 0 || y &lt; 0 || y &gt;= map.length || x &gt;= map[y].length() || map[y].charAt(x) == 'X' || paths.contains(x, y)) {</span>
+<span class="fc" id="L243">            return ;</span>
+        }
+    
+<span class="fc" id="L246">        LinkedList sol = new LinkedList();</span>
+<span class="fc" id="L247">        solveRec(x,y,goalX,goalY,sol);</span>
+<span class="pc bpc" id="L248" title="1 of 2 branches missed.">        if(sol != null){</span>
+<span class="fc" id="L249">            paths.append(x, y);</span>
+        }
+
+<span class="fc" id="L252">        validStartsRec(x + 1, y, goalX, goalY, paths);</span>
+<span class="fc" id="L253">        validStartsRec(x = 0, y + 1, goalX, goalY, paths);</span>
+        
+
+    
+    
+<span class="fc" id="L258">    }</span>
+    
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

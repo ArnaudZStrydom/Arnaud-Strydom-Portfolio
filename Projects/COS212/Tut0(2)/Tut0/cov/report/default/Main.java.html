@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Main.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCo Coverage Report</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">Main.java</span></div><h1>Main.java</h1><pre class="source lang-java linenums"><span class="nc" id="L1">public class Main {</span>
+    /*
+     * 1 Testing
+     * 2 Normal
+     */
+<span class="fc" id="L6">    public static int PRINT_MODE = 1;</span>
+
+<span class="fc" id="L8">    public static String ANSI_RED = &quot;\u001b[31;1m&quot;;</span>
+<span class="fc" id="L9">    public static String ANSI_GREEN = &quot;\u001b[32;1m&quot;;</span>
+<span class="fc" id="L10">    public static String ANSI_BLUE = &quot;\033[0;34m&quot;;</span>
+<span class="fc" id="L11">    public static String ANSI_RESET = &quot;\u001b[0m&quot;;</span>
+<span class="fc" id="L12">    public static int SUITES_RUN = 0;</span>
+<span class="fc" id="L13">    public static int SUITES_PASSED = 0;</span>
+<span class="fc" id="L14">    public static int TESTS_RUN = 0;</span>
+<span class="fc" id="L15">    public static int TESTS_PASSED = 0;</span>
+
+    public static void main(String[] args) {
+<span class="pc bpc" id="L18" title="1 of 2 branches missed.">        if (args.length == 0) {</span>
+<span class="fc" id="L19">            task1();</span>
+<span class="fc" id="L20">            task2();</span>
+        } else {
+<span class="nc" id="L22">            int taskNum = Integer.valueOf(args[0]);</span>
+<span class="nc bnc" id="L23" title="All 3 branches missed.">            switch (taskNum) {</span>
+                case 1:
+<span class="nc" id="L25">                    task1();</span>
+<span class="nc" id="L26">                    break;</span>
+                case 2:
+<span class="nc" id="L28">                    task2();</span>
+                    break;
+
+            }
+        }
+<span class="fc" id="L33">        endAll();</span>
+<span class="fc" id="L34">    }</span>
+
+    public static void task1() {
+<span class="fc" id="L37">        startSuite(&quot;Node testing&quot;);</span>
+<span class="fc" id="L38">        Node n1 = new Node(5);</span>
+<span class="fc" id="L39">        assertEquals(n1.toString(), &quot;[5]&quot;);</span>
+<span class="fc" id="L40">        Node n2 = new Node(2, n1);</span>
+<span class="fc" id="L41">        assertEquals(n2.toString(), &quot;[2]&quot;);</span>
+<span class="fc" id="L42">        endSuite();</span>
+<span class="fc" id="L43">    }</span>
+
+    public static void task2() {
+<span class="fc" id="L46">        startSuite(&quot;LinkedList testing&quot;);</span>
+<span class="fc" id="L47">        LinkedList l1 = new LinkedList();</span>
+<span class="fc" id="L48">        assertEquals(l1.toString(), &quot;Empty&quot;);</span>
+<span class="fc" id="L49">        LinkedList l2 = new LinkedList(4);</span>
+<span class="fc" id="L50">        assertEquals(l2.toString(), &quot;[4]&quot;);</span>
+<span class="fc" id="L51">        LinkedList l3 = new LinkedList(new int[] { 1, 2, 3, 4 });</span>
+<span class="fc" id="L52">        assertEquals(l3.toString(), &quot;[1]-&gt;[2]-&gt;[3]-&gt;[4]&quot;);</span>
+<span class="fc" id="L53">        l3.insert(-1);</span>
+<span class="fc" id="L54">        assertEquals(l3.toString(), &quot;[-1]-&gt;[1]-&gt;[2]-&gt;[3]-&gt;[4]&quot;);</span>
+<span class="fc" id="L55">        assertEquals(l3.contains(1), true);</span>
+<span class="fc" id="L56">        assertEquals(l3.contains(0), false);</span>
+<span class="fc" id="L57">        l3.delete(1);</span>
+<span class="fc" id="L58">        assertEquals(l3.toString(), &quot;[-1]-&gt;[2]-&gt;[3]-&gt;[4]&quot;);</span>
+<span class="fc" id="L59">        l3.delete(69);</span>
+<span class="fc" id="L60">        assertEquals(l3.toString(), &quot;[-1]-&gt;[2]-&gt;[3]-&gt;[4]&quot;);</span>
+<span class="fc" id="L61">        l3.delete(10);</span>
+<span class="fc" id="L62">        assertEquals(l3.toString(), &quot;[-1]-&gt;[2]-&gt;[3]-&gt;[4]&quot;);</span>
+<span class="fc" id="L63">        l3.delete(-1);</span>
+<span class="fc" id="L64">        assertEquals(l3.toString(), &quot;[2]-&gt;[3]-&gt;[4]&quot;);</span>
+<span class="fc" id="L65">        l3.delete(4);</span>
+<span class="fc" id="L66">        assertEquals(l3.toString(), &quot;[2]-&gt;[3]&quot;);</span>
+<span class="fc" id="L67">        endSuite();</span>
+<span class="fc" id="L68">    }</span>
+
+    public static void startSuite(String name) {
+<span class="pc bpc" id="L71" title="1 of 2 branches missed.">        switch (PRINT_MODE) {</span>
+            case 1:
+<span class="fc" id="L73">                SUITES_RUN++;</span>
+<span class="fc" id="L74">                System.out.println(&quot;===================\nStarting: &quot; + name + &quot;\n===================&quot;);</span>
+                break;
+        }
+<span class="fc" id="L77">    }</span>
+
+    public static void endSuite() {
+<span class="pc bpc" id="L80" title="1 of 2 branches missed.">        switch (PRINT_MODE) {</span>
+            case 1:
+<span class="pc bpc" id="L82" title="1 of 2 branches missed.">                if (TESTS_RUN == TESTS_PASSED) {</span>
+<span class="fc" id="L83">                    SUITES_PASSED++;</span>
+<span class="fc" id="L84">                    System.out.println(ANSI_GREEN + &quot;All Tests Passed &quot; + ANSI_RESET + &quot;\n===================&quot;);</span>
+                } else {
+<span class="nc" id="L86">                    System.out.println(ANSI_RED + &quot;Tests Failed: &quot; + (TESTS_RUN - TESTS_PASSED)</span>
+                            + &quot;\n===================&quot; + ANSI_RESET);
+                }
+<span class="fc" id="L89">                TESTS_RUN = 0;</span>
+<span class="fc" id="L90">                TESTS_PASSED = 0;</span>
+                break;
+        }
+<span class="fc" id="L93">    }</span>
+
+    public static &lt;T&gt; void assertEquals(T actual, T expected) {
+<span class="pc bpc" id="L96" title="2 of 3 branches missed.">        switch (PRINT_MODE) {</span>
+            case 1:
+<span class="fc" id="L98">                TESTS_RUN++;</span>
+<span class="pc bpc" id="L99" title="1 of 2 branches missed.">                if (actual.equals(expected)) {</span>
+<span class="fc" id="L100">                    TESTS_PASSED++;</span>
+<span class="fc" id="L101">                    System.out.println(ANSI_GREEN + &quot;Test &quot; + TESTS_RUN + &quot; Passed &quot; + ANSI_RESET);</span>
+                } else {
+<span class="nc" id="L103">                    System.out.println(ANSI_RED + &quot;Test &quot; + TESTS_RUN + &quot; Failed: Expected &quot; + expected + &quot; but got &quot;</span>
+                            + actual + ANSI_RESET);
+                }
+<span class="nc" id="L106">                break;</span>
+            case 2:
+<span class="nc" id="L108">                System.out.println(actual);</span>
+                break;
+        }
+<span class="fc" id="L111">    }</span>
+
+    public static void assertEquals(String actual, String expected) {
+<span class="pc bpc" id="L114" title="2 of 3 branches missed.">        switch (PRINT_MODE) {</span>
+            case 1:
+<span class="fc" id="L116">                TESTS_RUN++;</span>
+<span class="pc bpc" id="L117" title="1 of 2 branches missed.">                if (actual.equals(expected)) {</span>
+<span class="fc" id="L118">                    TESTS_PASSED++;</span>
+<span class="fc" id="L119">                    System.out.println(ANSI_GREEN + &quot;Test &quot; + TESTS_RUN + &quot; Passed &quot; + ANSI_RESET);</span>
+                } else {
+<span class="nc" id="L121">                    System.out.println(ANSI_RED + &quot;Test &quot; + TESTS_RUN + &quot; Failed: Expected &quot; + ANSI_RESET);</span>
+<span class="nc" id="L122">                    boolean wrong = false;</span>
+<span class="nc bnc" id="L123" title="All 2 branches missed.">                    for (int i = 0; i &lt; expected.length(); i++) {</span>
+<span class="nc bnc" id="L124" title="All 4 branches missed.">                        if (i &lt; actual.length() &amp;&amp; actual.charAt(i) == expected.charAt(i)) {</span>
+<span class="nc bnc" id="L125" title="All 2 branches missed.">                            if (wrong) {</span>
+<span class="nc" id="L126">                                System.out.print(ANSI_RESET);</span>
+<span class="nc" id="L127">                                wrong = false;</span>
+                            }
+<span class="nc bnc" id="L129" title="All 2 branches missed.">                        } else if (!wrong) {</span>
+<span class="nc" id="L130">                            System.out.print(ANSI_RED);</span>
+<span class="nc" id="L131">                            wrong = true;</span>
+                        }
+<span class="nc" id="L133">                        System.out.print(expected.charAt(i));</span>
+                    }
+<span class="nc" id="L135">                    System.out.print(ANSI_RESET + &quot; but got &quot;);</span>
+<span class="nc" id="L136">                    wrong = false;</span>
+<span class="nc bnc" id="L137" title="All 2 branches missed.">                    for (int i = 0; i &lt; actual.length(); i++) {</span>
+<span class="nc bnc" id="L138" title="All 4 branches missed.">                        if (i &lt; expected.length() &amp;&amp; actual.charAt(i) == expected.charAt(i)) {</span>
+<span class="nc bnc" id="L139" title="All 2 branches missed.">                            if (wrong) {</span>
+<span class="nc" id="L140">                                System.out.print(ANSI_RESET);</span>
+<span class="nc" id="L141">                                wrong = false;</span>
+                            }
+<span class="nc bnc" id="L143" title="All 2 branches missed.">                        } else if (!wrong) {</span>
+<span class="nc" id="L144">                            System.out.print(ANSI_RED);</span>
+<span class="nc" id="L145">                            wrong = true;</span>
+                        }
+<span class="nc" id="L147">                        System.out.print(actual.charAt(i));</span>
+                    }
+<span class="nc" id="L149">                    System.err.println(ANSI_RESET);</span>
+                }
+<span class="nc" id="L151">                break;</span>
+            case 2:
+<span class="nc" id="L153">                System.out.println(actual);</span>
+                break;
+        }
+<span class="fc" id="L156">    }</span>
+
+    public static void endAll() {
+<span class="pc bpc" id="L159" title="1 of 2 branches missed.">        switch (PRINT_MODE) {</span>
+            case 1:
+<span class="pc bpc" id="L161" title="1 of 2 branches missed.">                if (SUITES_RUN == SUITES_PASSED) {</span>
+<span class="fc" id="L162">                    System.out.println(</span>
+                            ANSI_GREEN + &quot;\n\n===================\n&quot; + &quot;All Suites Passed &quot; + SUITES_PASSED + &quot;/&quot;
+                                    + SUITES_RUN + &quot;\n===================&quot; + ANSI_RESET);
+                } else {
+<span class="nc" id="L166">                    System.out.println(ANSI_RED + &quot;===================\n&quot; + &quot;Some Suites Failed: &quot; + SUITES_PASSED + &quot;/&quot;</span>
+                            + SUITES_RUN + &quot;\n===================&quot; + ANSI_RESET);
+                }
+                break;
+        }
+<span class="fc" id="L171">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

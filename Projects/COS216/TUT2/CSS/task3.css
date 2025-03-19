@@ -1,0 +1,62 @@
+body {
+  background-color: rgb(44, 43, 43);
+}
+
+#firstC .body,
+#firstC .roof {
+  background-color: red;
+}
+
+#secondC .body,
+#secondC .roof {
+  background-color: green;
+}
+
+#thirdC .body,
+#thirdC .roof {
+  background-color: blue;
+}
+
+#fourthC .body,
+#fourthC .roof {
+  background-color: purple;
+}
+
+.car {
+  width: 200px;
+  height: 200px;
+}
+
+.wheel {
+  position: relative;
+  border-radius: 100%;
+  background-color: black;
+  width: 30%;
+  height: 30%;
+  bottom: 0%;
+  display: inline-block;
+}
+
+.leftWheel {
+  left: 0;
+}
+
+.rightWheel {
+  left: 30%;
+}
+
+.body {
+  position: relative;
+  width: 100%;
+  height: 30%;
+  top: 12%;
+  border-radius: 5px;
+}
+
+.roof {
+  position: relative;
+  height: 30%;
+  top: 12%;
+  left: 12%;
+  width: 60%;
+}

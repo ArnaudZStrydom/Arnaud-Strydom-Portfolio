@@ -1,0 +1,50 @@
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: antiquewhite;
+  
+}
+
+.boxbase {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  border-radius: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+}
+
+.box1 {
+  /* Any green will be fine */
+  border: 2px solid #26d926;
+  box-shadow: 0 0 10px #26d926;
+}
+
+.box2 {
+  /* Any blue will be fine */
+  border: 2px solid #1e90ff;
+  box-shadow: 0 0 10px #1e90ff;
+}
+
+.box1:hover {
+  background-color: #26d926;
+  color: white;
+}
+
+ul {
+  border: purple;
+  border-style: solid;
+  border-width: 2px;
+  width: fit-content;
+}
+
+.numlist > li:nth-child(2n) {
+  color: #26d926;
+}
+
+.carlist > li::first-letter {
+  color: #1e90ff;
+}

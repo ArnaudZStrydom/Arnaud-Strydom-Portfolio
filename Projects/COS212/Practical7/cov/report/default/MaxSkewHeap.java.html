@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MaxSkewHeap.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCo Coverage Report</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">MaxSkewHeap.java</span></div><h1>MaxSkewHeap.java</h1><pre class="source lang-java linenums">public class MaxSkewHeap {
+    Node root;
+
+    @Override
+    public String toString() {
+<span class="pc bpc" id="L6" title="1 of 2 branches missed.">        return (root == null ? &quot;Empty Tree&quot; : toString(root, &quot;&quot;, true));</span>
+    }
+
+    public String toString(Node node, String prefix, boolean end) {
+<span class="fc" id="L10">        String res = &quot;&quot;;</span>
+<span class="fc bfc" id="L11" title="All 2 branches covered.">        if (node.right != null) {</span>
+<span class="fc bfc" id="L12" title="All 2 branches covered.">            res += toString(node.right, prefix + (end ? &quot;│   &quot; : &quot;    &quot;), false);</span>
+        }
+<span class="fc bfc" id="L14" title="All 2 branches covered.">        res += prefix + (end ? &quot;└── &quot; : &quot;┌── &quot;) + node.toString() + &quot;\n&quot;;</span>
+<span class="fc bfc" id="L15" title="All 2 branches covered.">        if (node.left != null) {</span>
+<span class="fc bfc" id="L16" title="All 2 branches covered.">            res += toString(node.left, prefix + (end ? &quot;    &quot; : &quot;│   &quot;), true);</span>
+        }
+<span class="fc" id="L18">        return res;</span>
+    }
+
+    public String toStringOneLine() {
+<span class="pc bpc" id="L22" title="1 of 2 branches missed.">        return (root == null ? &quot;{}&quot; : toStringOneLine(root));</span>
+    }
+
+    public String toStringOneLine(Node ptr) {
+<span class="fc bfc" id="L26" title="All 2 branches covered.">        if (ptr == null) {</span>
+<span class="fc" id="L27">            return &quot;{}&quot;;</span>
+        }
+<span class="fc" id="L29">        return &quot;{&quot; + ptr.toString() + toStringOneLine(ptr.left) + toStringOneLine(ptr.right) + &quot;}&quot;;</span>
+    }
+
+<span class="fc" id="L32">    public MaxSkewHeap() {</span>
+<span class="fc" id="L33">        root = null ;   </span>
+<span class="fc" id="L34">    }</span>
+
+<span class="fc" id="L36">    public MaxSkewHeap(String input) {</span>
+        
+<span class="fc" id="L38">        root = MaxSkewHeaprec(input);</span>
+<span class="fc" id="L39">    }</span>
+
+    private Node MaxSkewHeaprec(String recinput){
+<span class="fc bfc" id="L42" title="All 2 branches covered.">        if(recinput.equals(&quot;{}&quot;)){</span>
+<span class="fc" id="L43">            return null ;</span>
+        }
+<span class="fc" id="L45">        recinput = recinput.substring(1 , recinput.length()-1);</span>
+<span class="fc" id="L46">        int OpeningBrac = recinput.indexOf(&quot;{&quot;);</span>
+<span class="fc" id="L47">        String Scurrentdata = (recinput.substring(0, OpeningBrac)).trim();</span>
+<span class="fc" id="L48">        int Icurrentdata = Integer.parseInt(Scurrentdata);</span>
+
+<span class="fc" id="L50">        int openBraces = 1;</span>
+<span class="fc" id="L51">        int closedBraces = 0;</span>
+<span class="fc" id="L52">        int i = OpeningBrac + 1 ;</span>
+<span class="fc bfc" id="L53" title="All 2 branches covered.">        while (openBraces != closedBraces) {</span>
+<span class="fc bfc" id="L54" title="All 2 branches covered.">            if (recinput.charAt(i) == '{') {</span>
+<span class="fc" id="L55">                openBraces++;</span>
+<span class="fc bfc" id="L56" title="All 2 branches covered.">            } else if (recinput.charAt(i) == '}') {</span>
+<span class="fc" id="L57">                closedBraces++;</span>
+            }
+<span class="fc" id="L59">            i++;</span>
+        }
+
+<span class="fc" id="L62">        String leftRep = recinput.substring(OpeningBrac, i  );</span>
+<span class="fc" id="L63">        String rightRep = recinput.substring(i , recinput.length() );</span>
+
+<span class="fc" id="L65">        Node leftChild = MaxSkewHeaprec(leftRep);</span>
+<span class="fc" id="L66">        Node rightChild = MaxSkewHeaprec(rightRep);</span>
+
+<span class="fc" id="L68">        Node curnode = new Node(Icurrentdata);</span>
+<span class="fc" id="L69">        curnode.left = leftChild;</span>
+<span class="fc" id="L70">        curnode.right = rightChild;</span>
+<span class="fc" id="L71">        return curnode;</span>
+
+    }
+
+    public void insert(int data) {
+<span class="pc bpc" id="L76" title="1 of 2 branches missed.">        if (contains(root, data)) {</span>
+<span class="nc" id="L77">            System.out.println(&quot;Value already exists in the heap.&quot;);</span>
+<span class="nc" id="L78">            return;</span>
+        }
+
+<span class="fc" id="L81">        Node insertNode = new Node(data);</span>
+
+
+<span class="fc" id="L84">        root = merge(root, insertNode);</span>
+
+<span class="fc" id="L86">    }</span>
+
+    private Node merge(Node heap1, Node heap2) {
+<span class="fc bfc" id="L89" title="All 2 branches covered.">        if (heap1 == null) {</span>
+<span class="fc" id="L90">            return heap2;</span>
+        }
+<span class="pc bpc" id="L92" title="1 of 2 branches missed.">        if (heap2 == null) {</span>
+<span class="nc" id="L93">            return heap1;</span>
+        }
+    
+<span class="fc bfc" id="L96" title="All 2 branches covered.">        if (heap1.data &gt; heap2.data) {</span>
+
+<span class="fc" id="L98">            Node temp = heap1.right;</span>
+<span class="fc" id="L99">            heap1.right = heap1.left;</span>
+<span class="fc" id="L100">            heap1.left = temp;</span>
+<span class="fc" id="L101">            heap1.left = merge(heap1.left, heap2);</span>
+<span class="fc" id="L102">            return heap1;</span>
+
+        } else {
+            
+<span class="fc" id="L106">            Node temp = heap2.right;</span>
+<span class="fc" id="L107">            heap2.right = heap2.left;</span>
+<span class="fc" id="L108">            heap2.left = temp;</span>
+<span class="fc" id="L109">            heap2.left = merge(heap2.left, heap1);</span>
+<span class="fc" id="L110">            return heap2;</span>
+
+        }
+    }
+
+    private boolean contains(Node node, int data) {
+<span class="fc bfc" id="L116" title="All 2 branches covered.">        if (node == null) {</span>
+<span class="fc" id="L117">            return false;</span>
+        }
+<span class="fc bfc" id="L119" title="All 2 branches covered.">        if (node.data == data) {</span>
+<span class="fc" id="L120">            return true;</span>
+        }
+<span class="fc bfc" id="L122" title="All 4 branches covered.">        return contains(node.left, data) || contains(node.right, data);</span>
+    }
+
+    public void remove(int data) {
+<span class="pc bpc" id="L126" title="1 of 2 branches missed.">        if(!contains(root,data)){</span>
+<span class="nc" id="L127">            return;</span>
+        }
+
+<span class="fc" id="L130">        root = remove(root, data);</span>
+
+<span class="fc" id="L132">    }</span>
+
+    private Node remove(Node node, int data) {
+<span class="fc bfc" id="L135" title="All 2 branches covered.">        if (node == null) {</span>
+<span class="fc" id="L136">            return null;</span>
+        }
+    
+<span class="fc bfc" id="L139" title="All 2 branches covered.">        if (node.data == data) {</span>
+<span class="fc" id="L140">            return merge(node.left, node.right);</span>
+        }
+    
+<span class="fc" id="L143">        node.left = remove(node.left, data);</span>
+<span class="fc" id="L144">        node.right = remove(node.right, data);</span>
+    
+<span class="fc" id="L146">        return node;</span>
+    }
+
+    public Node search(int value) {
+<span class="fc" id="L150">        return searchrec(root, value);</span>
+    }
+
+    private Node searchrec(Node node, int value) {
+<span class="fc bfc" id="L154" title="All 2 branches covered.">        if (node == null) {</span>
+<span class="fc" id="L155">            return null;</span>
+        }
+    
+<span class="fc bfc" id="L158" title="All 2 branches covered.">        if (node.data == value) {</span>
+<span class="fc" id="L159">            return node;</span>
+        }
+    
+<span class="pc bpc" id="L162" title="1 of 2 branches missed.">        if (node.data &lt; value) {</span>
+<span class="nc" id="L163">            return null;</span>
+        }
+    
+        
+<span class="fc" id="L167">        Node rightResult = searchrec(node.right, value);</span>
+<span class="fc bfc" id="L168" title="All 2 branches covered.">        if (rightResult != null) {</span>
+<span class="fc" id="L169">            return rightResult; </span>
+        }
+    
+<span class="fc" id="L172">        return searchrec(node.left, value); </span>
+    }
+
+    public String searchPath(int value) {
+<span class="fc bfc" id="L176" title="All 2 branches covered.">        if (root == null) {</span>
+<span class="fc" id="L177">            return &quot;&quot;; </span>
+        }
+<span class="fc" id="L179">        StringBuilder str = new StringBuilder();</span>
+<span class="fc" id="L180">        Boolean found = false ;</span>
+<span class="fc" id="L181">        found = searchpathrec(root,value ,str , found);</span>
+<span class="fc bfc" id="L182" title="All 2 branches covered.">        if(!found){</span>
+<span class="fc" id="L183">            int delete = str.length() - 2;</span>
+<span class="fc" id="L184">            str.delete(delete, str.length());</span>
+        }
+<span class="fc" id="L186">        return str.toString();</span>
+    }
+
+    private boolean searchpathrec(Node node , int value , StringBuilder str , boolean found){
+<span class="fc bfc" id="L190" title="All 2 branches covered.">        if (node == null) {</span>
+<span class="fc" id="L191">            return false ;</span>
+        }
+    
+<span class="fc bfc" id="L194" title="All 2 branches covered.">        if (node.data == value) {</span>
+<span class="fc" id="L195">           str.append(&quot;[&quot; + node.data + &quot;]&quot;);</span>
+<span class="fc" id="L196">           found = true ;</span>
+<span class="fc" id="L197">           return found;</span>
+        }else{
+<span class="fc" id="L199">            str.append(node.data + &quot;-&gt;&quot;);</span>
+        }
+    
+<span class="fc bfc" id="L202" title="All 2 branches covered.">        if (node.data &lt; value) {</span>
+<span class="fc" id="L203">            return false ;</span>
+        }
+    
+        
+<span class="pc bpc" id="L207" title="1 of 2 branches missed.">        if(!found){</span>
+<span class="fc" id="L208">            found = searchpathrec(node.right, value,str,found);</span>
+        }
+        
+
+<span class="fc bfc" id="L212" title="All 2 branches covered.">        if(!found){</span>
+<span class="fc" id="L213">            found =  searchpathrec(node.left, value ,str,found); </span>
+        }
+
+<span class="fc bfc" id="L216" title="All 2 branches covered.">        if(!found){</span>
+<span class="fc" id="L217">            return false;</span>
+        }
+
+<span class="fc" id="L220">        return true ;</span>
+        
+    }
+
+    public boolean isLeftist() {
+<span class="fc" id="L225">        return isLeft(root);</span>
+    }
+    private boolean isLeft(Node node) {
+    
+<span class="fc bfc" id="L229" title="All 2 branches covered.">        if (node == null) {</span>
+<span class="fc" id="L230">            return true;</span>
+        }
+
+<span class="fc" id="L233">        int lNPL = NPL(node.left);</span>
+<span class="fc" id="L234">        int rNPL = NPL(node.right);</span>
+    
+<span class="fc bfc" id="L236" title="All 2 branches covered.">        if (lNPL &lt; rNPL) {</span>
+<span class="fc" id="L237">            return false;</span>
+        }
+<span class="pc bpc" id="L239" title="2 of 4 branches missed.">        return isLeft(node.left) &amp;&amp; isLeft(node.right);</span>
+    }
+    
+    private int NPL(Node node) {
+<span class="fc bfc" id="L243" title="All 2 branches covered.">        if (node == null) {</span>
+<span class="fc" id="L244">            return 0;</span>
+        }
+
+<span class="fc" id="L247">        int lNPL = NPL(node.left);</span>
+<span class="fc" id="L248">        int rNPL = NPL(node.right);</span>
+
+<span class="fc" id="L250">        return Math.max(lNPL, rNPL) + 1;</span>
+    }
+
+    public boolean isRightist() {
+<span class="fc" id="L254">        return isRight(root);</span>
+    }
+
+    private boolean isRight(Node node) {
+    
+<span class="fc bfc" id="L259" title="All 2 branches covered.">        if (node == null) {</span>
+<span class="fc" id="L260">            return true;</span>
+        }
+
+<span class="fc" id="L263">        int lNPL = NPL(node.left);</span>
+<span class="fc" id="L264">        int rNPL = NPL(node.right);</span>
+    
+<span class="fc bfc" id="L266" title="All 2 branches covered.">        if (lNPL &gt; rNPL) {</span>
+<span class="fc" id="L267">            return false;</span>
+        }
+<span class="pc bpc" id="L269" title="1 of 4 branches missed.">        return isRight(node.left) &amp;&amp; isRight(node.right);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

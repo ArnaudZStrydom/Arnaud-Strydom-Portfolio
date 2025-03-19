@@ -1,0 +1,75 @@
+body {
+	background: black;
+}
+
+h2 {
+
+	color: lightblue;
+
+}
+
+h1 {
+	color:white;
+	text-align: center;
+}
+
+div {
+	color: white;
+
+}
+
+.container {
+
+	position: relative;
+	text-align: center;
+}
+
+.chitscontainer {
+
+}
+
+.sendcontainer {
+
+	margin-top: 10px;
+
+}
+
+input {
+
+	border-radius: 10px;
+
+}
+
+.maincontainer {
+
+	display: block;
+
+}
+
+.chitname {
+
+	color: blue;
+	text-align: center;
+	font-size: 120%;
+
+}
+
+.error {
+
+	border-color: red;
+	color: red;
+
+}
+
+.chit {
+
+	border: solid white 1px;
+	border-radius: 10px;
+	position: relative;
+	display: inline-block;
+	padding: 5px;
+	margin: 5px;
+
+}
+
+

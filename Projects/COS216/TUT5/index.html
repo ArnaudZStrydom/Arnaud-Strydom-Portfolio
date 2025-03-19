@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Display Text</title>
+	<link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<h1></h1>
+
+<div id="mainScreen" class="container maincontainer">
+	<h2>Sending and Receiving data using Sockets</h2>
+	<button onclick="reconnect()">Reconnect</button> <br>
+
+	<div id='viewer'>
+		<h2 class="notcon"> Not connected </h2>
+	</div> <br>
+
+	<input type="range" id="angle" min="0" max="360" oninput="sendAngle()"> </input>
+	<br>
+	<div id="square"> </div>
+</div>
+
+<script>
+
+var socket;
+var squareD = document.getElementById('square');
+
+
+function reconnect()
+{
+	document.getElementById('viewer').innerHTML = '<h2 class="notcon"> Not connected </h2>';
+	//Create the socket
+}
+
+//When the socket connects
+function openSocket(ev)
+{
+	//Update the heading and anything else that needs to be done
+}
+
+//When the socket disconnects
+function closeSocket(ev)
+{
+	//Update the heading and anything else that needs to be done
+}
+
+//When a message is received from the socket
+function socketMessage(ev)
+{
+	//Update squareD's rotation property
+}
+
+function sendAngle()
+{
+	//Send value to the server
+}
+
+</script>
+
+</body>
+</html>

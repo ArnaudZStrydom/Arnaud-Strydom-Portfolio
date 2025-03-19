@@ -1,0 +1,40 @@
+
+.navbar {
+    display: flex;
+    background-color: black;
+    overflow: hidden;
+    
+  }
+  
+  .navbar a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 17px;
+  }
+
+  .navbar p {
+    color: white !important;
+    padding: auto;
+  }
+  
+  .navbar a:hover {
+    background-color: rgb(223, 196, 75);
+    color: black;
+  }
+  
+  .navbar a.current {
+    background-color: rgb(223, 196, 75);
+    color: black;
+  }
+  
+  .navbar input[type=text] {
+    padding: 6px;
+    margin-top: 9px;
+    margin-bottom: 9px;
+    margin-left: 150px;
+    margin-right: 150px;
+    font-size: 15px;
+    border: 1px solid #000000;
+  }

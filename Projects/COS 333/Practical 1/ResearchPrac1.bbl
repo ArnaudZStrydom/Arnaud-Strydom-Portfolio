@@ -1,0 +1,302 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{BrainFuck}{article}{}
+      \name{author}{1}{}{%
+        {{hash=c0d0f07331bde2f82912b49ee5dd85ff}{%
+           family={Bulat},
+           familyi={B\bibinitperiod},
+           given={Radoslaw},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{c0d0f07331bde2f82912b49ee5dd85ff}
+      \strng{fullhash}{c0d0f07331bde2f82912b49ee5dd85ff}
+      \strng{bibnamehash}{c0d0f07331bde2f82912b49ee5dd85ff}
+      \strng{authorbibnamehash}{c0d0f07331bde2f82912b49ee5dd85ff}
+      \strng{authornamehash}{c0d0f07331bde2f82912b49ee5dd85ff}
+      \strng{authorfullhash}{c0d0f07331bde2f82912b49ee5dd85ff}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Esolang Journal}
+      \field{title}{BRAINFUCK – LANGUAGE THAT WILL KILL YOUR BRAIN}
+      \field{year}{2017}
+      \verb{urlraw}
+      \verb https://thecodest.co/blog/brainfuck-language-that-will-kill-your-brain/
+      \endverb
+      \verb{url}
+      \verb https://thecodest.co/blog/brainfuck-language-that-will-kill-your-brain/
+      \endverb
+    \endentry
+    \entry{Funge93}{article}{}
+      \name{author}{1}{}{%
+        {{hash=e06fea2dafaf9f0881a0c19ee94d0462}{%
+           family={Chouchoulas},
+           familyi={C\bibinitperiod},
+           given={Alexios},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{e06fea2dafaf9f0881a0c19ee94d0462}
+      \strng{fullhash}{e06fea2dafaf9f0881a0c19ee94d0462}
+      \strng{bibnamehash}{e06fea2dafaf9f0881a0c19ee94d0462}
+      \strng{authorbibnamehash}{e06fea2dafaf9f0881a0c19ee94d0462}
+      \strng{authornamehash}{e06fea2dafaf9f0881a0c19ee94d0462}
+      \strng{authorfullhash}{e06fea2dafaf9f0881a0c19ee94d0462}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Esolang Journal}
+      \field{title}{Fungus: the Funge Machine}
+      \field{year}{1993}
+      \verb{urlraw}
+      \verb http://www.club.cc.cmu.edu/~ajo/docs/fungus.pdfe
+      \endverb
+      \verb{url}
+      \verb http://www.club.cc.cmu.edu/~ajo/docs/fungus.pdfe
+      \endverb
+    \endentry
+    \entry{esolang2025}{article}{}
+      \name{author}{1}{}{%
+        {{hash=952da18277df082d9f003b4a86444f00}{%
+           family={Elvis},
+           familyi={E\bibinitperiod},
+           given={Gyau\bibnamedelima Boahen},
+           giveni={G\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \strng{namehash}{952da18277df082d9f003b4a86444f00}
+      \strng{fullhash}{952da18277df082d9f003b4a86444f00}
+      \strng{bibnamehash}{952da18277df082d9f003b4a86444f00}
+      \strng{authorbibnamehash}{952da18277df082d9f003b4a86444f00}
+      \strng{authornamehash}{952da18277df082d9f003b4a86444f00}
+      \strng{authorfullhash}{952da18277df082d9f003b4a86444f00}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Dev.to}
+      \field{title}{Esoteric Languages: What are they, and why you should be concerned?}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://dev.to/gyauelvis/esoteric-languages-what-are-they-and-why-you-should-be-concerned-592d
+      \endverb
+      \verb{url}
+      \verb https://dev.to/gyauelvis/esoteric-languages-what-are-they-and-why-you-should-be-concerned-592d
+      \endverb
+    \endentry
+    \entry{turingtarpit1967}{article}{}
+      \name{author}{1}{}{%
+        {{hash=ae920642b6de07ea968281350d5a3270}{%
+           family={esolangs.org},
+           familyi={e\bibinitperiod}}}%
+      }
+      \strng{namehash}{ae920642b6de07ea968281350d5a3270}
+      \strng{fullhash}{ae920642b6de07ea968281350d5a3270}
+      \strng{bibnamehash}{ae920642b6de07ea968281350d5a3270}
+      \strng{authorbibnamehash}{ae920642b6de07ea968281350d5a3270}
+      \strng{authornamehash}{ae920642b6de07ea968281350d5a3270}
+      \strng{authorfullhash}{ae920642b6de07ea968281350d5a3270}
+      \field{sortinit}{e}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Esolang Journal}
+      \field{title}{Turing tarpit}
+      \field{year}{1964}
+      \verb{urlraw}
+      \verb https://esolangs.org/wiki/Turing_tarpit
+      \endverb
+      \verb{url}
+      \verb https://esolangs.org/wiki/Turing_tarpit
+      \endverb
+    \endentry
+    \entry{vibe_coding_medium_2025}{article}{}
+      \name{author}{1}{}{%
+        {{hash=f769839e0a378353190cda226354ca4a}{%
+           family={Gupta},
+           familyi={G\bibinitperiod},
+           given={Mehul},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{f769839e0a378353190cda226354ca4a}
+      \strng{fullhash}{f769839e0a378353190cda226354ca4a}
+      \strng{bibnamehash}{f769839e0a378353190cda226354ca4a}
+      \strng{authorbibnamehash}{f769839e0a378353190cda226354ca4a}
+      \strng{authornamehash}{f769839e0a378353190cda226354ca4a}
+      \strng{authorfullhash}{f769839e0a378353190cda226354ca4a}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Medium}
+      \field{title}{What is Vibe Coding?}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://medium.com/data-science-in-your-pocket/what-is-vibe-coding-cf52c4efa867
+      \endverb
+      \verb{url}
+      \verb https://medium.com/data-science-in-your-pocket/what-is-vibe-coding-cf52c4efa867
+      \endverb
+    \endentry
+    \entry{karpathy_vibe_coding_2025}{article}{}
+      \name{author}{1}{}{%
+        {{hash=e91a4c2044bccdbef249eabc886ff988}{%
+           family={Karpathy},
+           familyi={K\bibinitperiod},
+           given={Andrej},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{e91a4c2044bccdbef249eabc886ff988}
+      \strng{fullhash}{e91a4c2044bccdbef249eabc886ff988}
+      \strng{bibnamehash}{e91a4c2044bccdbef249eabc886ff988}
+      \strng{authorbibnamehash}{e91a4c2044bccdbef249eabc886ff988}
+      \strng{authornamehash}{e91a4c2044bccdbef249eabc886ff988}
+      \strng{authorfullhash}{e91a4c2044bccdbef249eabc886ff988}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Business Insider}
+      \field{title}{Vibe Programming: Redefining Software Development with AI}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://www.businessinsider.com/vibe-coding-ai-silicon-valley-andrej-karpathy-2025-2
+      \endverb
+      \verb{url}
+      \verb https://www.businessinsider.com/vibe-coding-ai-silicon-valley-andrej-karpathy-2025-2
+      \endverb
+    \endentry
+    \entry{10.1007/978-3-031-35257-7_5}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=30bd41ceb8876b5ef36f8a501743a99a}{%
+           family={Lidström},
+           familyi={L\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod}}}%
+        {{hash=32114cef0976a7e6cfb82e548312fcdf}{%
+           family={Gurov},
+           familyi={G\bibinitperiod},
+           given={Dilian},
+           giveni={D\bibinitperiod}}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=8052f3dfdff64f97baa54df18e71651f}{%
+           family={David},
+           familyi={D\bibinitperiod},
+           given={Cristina},
+           giveni={C\bibinitperiod}}}%
+        {{hash=7b8f28a51717b34b499e8a1ffca1df90}{%
+           family={Sun},
+           familyi={S\bibinitperiod},
+           given={Meng},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cham}%
+      }
+      \list{publisher}{1}{%
+        {Springer Nature Switzerland}%
+      }
+      \strng{namehash}{7567ea7e024a3bfab74d5f66c5e52ac4}
+      \strng{fullhash}{7567ea7e024a3bfab74d5f66c5e52ac4}
+      \strng{bibnamehash}{7567ea7e024a3bfab74d5f66c5e52ac4}
+      \strng{authorbibnamehash}{7567ea7e024a3bfab74d5f66c5e52ac4}
+      \strng{authornamehash}{7567ea7e024a3bfab74d5f66c5e52ac4}
+      \strng{authorfullhash}{7567ea7e024a3bfab74d5f66c5e52ac4}
+      \strng{editorbibnamehash}{abf5e47f1b803c6f046d86b092970d24}
+      \strng{editornamehash}{abf5e47f1b803c6f046d86b092970d24}
+      \strng{editorfullhash}{abf5e47f1b803c6f046d86b092970d24}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In embedded systems development, contract based design is a design paradigm where a system is divided hierarchically into components and developed in a top-down manner, using contracts as a means to divide responsibilities and manage the complexity of the system. Contract theories provide a formal basis for reasoning about the properties of the system, and of the contracts themselves. In previous work, we have developed a contract theory for sequential, procedural programs, that is defined abstractly, at the semantic level. The theory fulfils well-established, desired properties of system design. In this paper, we present a methodology for applying the contract theory in real embedded software design. We show how to instantiate the contract theory with concrete syntaxes for defining components and contracts, and how the contract theory enables formal reasoning about the resulting objects. In order to cope with the need for different behavioural models at different levels of abstraction in an embedded system, we extend the contract theory through parametrisation on the semantic domain. We illustrate the application of the proposed methodology on a small, but realistic example, where the temporal logic TLA is used for reasoning at the system level, while lower level components are specified using pre- and post-conditions in the form of ACSL, a specification language for C.}
+      \field{booktitle}{Theoretical Aspects of Software Engineering}
+      \field{isbn}{978-3-031-35257-7}
+      \field{title}{Contract Based Embedded Software Design}
+      \field{year}{2023}
+      \field{pages}{77\bibrangedash 94}
+      \range{pages}{18}
+    \endentry
+    \entry{vibe_coding_dev_2025}{article}{}
+      \name{author}{1}{}{%
+        {{hash=f5fcc0b75911c3668c9dff7c4b5ead7c}{%
+           family={Walse},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{f5fcc0b75911c3668c9dff7c4b5ead7c}
+      \strng{fullhash}{f5fcc0b75911c3668c9dff7c4b5ead7c}
+      \strng{bibnamehash}{f5fcc0b75911c3668c9dff7c4b5ead7c}
+      \strng{authorbibnamehash}{f5fcc0b75911c3668c9dff7c4b5ead7c}
+      \strng{authornamehash}{f5fcc0b75911c3668c9dff7c4b5ead7c}
+      \strng{authorfullhash}{f5fcc0b75911c3668c9dff7c4b5ead7c}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Dev.to}
+      \field{title}{Vibe Coding: Redefining Creativity or Eroding the Soul of Programming?}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://dev.to/walse/vibe-coding-redefining-creativity-or-eroding-the-soul-of-programming-1on
+      \endverb
+      \verb{url}
+      \verb https://dev.to/walse/vibe-coding-redefining-creativity-or-eroding-the-soul-of-programming-1on
+      \endverb
+    \endentry
+    \entry{INTERCAL}{article}{}
+      \name{author}{2}{}{%
+        {{hash=7f4ecbef0e842ec8049ff0e633069f99}{%
+           family={Woods},
+           familyi={W\bibinitperiod},
+           given={Donald\bibnamedelima R.},
+           giveni={D\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=63bd7e664eaf2d5ca05efa226fd7a0ca}{%
+           family={Lyon},
+           familyi={L\bibinitperiod},
+           given={James\bibnamedelima M.},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{a199348bf81a1953ca53e0bf5020dcc8}
+      \strng{fullhash}{a199348bf81a1953ca53e0bf5020dcc8}
+      \strng{bibnamehash}{a199348bf81a1953ca53e0bf5020dcc8}
+      \strng{authorbibnamehash}{a199348bf81a1953ca53e0bf5020dcc8}
+      \strng{authornamehash}{a199348bf81a1953ca53e0bf5020dcc8}
+      \strng{authorfullhash}{a199348bf81a1953ca53e0bf5020dcc8}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Intercal Journal}
+      \field{title}{THE INTERCAL PROGRAMMING LANGUAGE REVISED REFERENCE MANUAL}
+      \field{year}{1973}
+      \verb{urlraw}
+      \verb https://www.cs.virginia.edu/~asb/teaching/cs415-fall05/docs/intercal.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.cs.virginia.edu/~asb/teaching/cs415-fall05/docs/intercal.pdf
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

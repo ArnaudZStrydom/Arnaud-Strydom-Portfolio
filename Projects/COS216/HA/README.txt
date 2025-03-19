@@ -1,0 +1,1 @@
+In this scenario, given the nature of property listings where images are integral to showcasing properties, using external links may be more beneficial. It can help reduce database size, leverage browser caching and CDN capabilities for faster image loading, and provide better separation of concerns for image management. Thus i decided to use external links to save the images.

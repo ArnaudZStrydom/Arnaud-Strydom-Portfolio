@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Main.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCo Coverage Report</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">Main.java</span></div><h1>Main.java</h1><pre class="source lang-java linenums">
+<span class="nc" id="L2">public class Main {</span>
+    public static void main(String[] args) throws Exception {
+<span class="fc" id="L4">        MaxHeap&lt;Integer&gt; maxHeap = new MaxHeap&lt;&gt;();</span>
+        
+<span class="fc" id="L6">        maxHeap.push(5);</span>
+<span class="fc" id="L7">        maxHeap.push(3);</span>
+<span class="fc" id="L8">        maxHeap.push(8);</span>
+<span class="fc" id="L9">        maxHeap.push(2);</span>
+<span class="fc" id="L10">        maxHeap.push(7);</span>
+<span class="fc" id="L11">        maxHeap.push(6);</span>
+<span class="fc" id="L12">        maxHeap.push(13);</span>
+<span class="fc" id="L13">        maxHeap.push(655);</span>
+<span class="fc" id="L14">        maxHeap.push(525);</span>
+        
+        
+<span class="fc" id="L17">        System.out.println(&quot;Max-Heap:&quot;);</span>
+<span class="fc" id="L18">        System.out.println(maxHeap.toString());</span>
+        
+<span class="fc" id="L20">        int size = maxHeap.size ;</span>
+<span class="fc" id="L21">        System.out.println(&quot;Removing elements from the Max-Heap:&quot;);</span>
+<span class="fc bfc" id="L22" title="All 2 branches covered.">        for (int i = 0 ; i &lt; size + 1 ; i++) {</span>
+<span class="fc" id="L23">            System.out.println(&quot;Popped element: &quot; + maxHeap.pop());</span>
+<span class="fc" id="L24">            System.out.println(&quot;Heap after popping:&quot;);</span>
+<span class="fc" id="L25">            System.out.println(maxHeap);</span>
+        }
+
+<span class="fc" id="L28">        MinHeap&lt;Integer&gt; minHeap = new MinHeap&lt;&gt;();</span>
+        
+        // Add elements to the heap
+<span class="fc" id="L31">        minHeap.push(5);</span>
+<span class="fc" id="L32">        minHeap.push(3);</span>
+<span class="fc" id="L33">        minHeap.push(8);</span>
+<span class="fc" id="L34">        minHeap.push(2);</span>
+<span class="fc" id="L35">        minHeap.push(7);</span>
+<span class="fc" id="L36">        minHeap.push(6);</span>
+<span class="fc" id="L37">        minHeap.push(13);</span>
+<span class="fc" id="L38">        minHeap.push(655);</span>
+<span class="fc" id="L39">        minHeap.push(525);</span>
+        
+        
+<span class="fc" id="L42">        System.out.println(&quot;Min-Heap:&quot;);</span>
+<span class="fc" id="L43">        System.out.println(minHeap.toString());</span>
+        
+<span class="fc" id="L45">         size = minHeap.size ;</span>
+<span class="fc" id="L46">        System.out.println(&quot;Removing elements from the Min-Heap:&quot;);</span>
+<span class="fc bfc" id="L47" title="All 2 branches covered.">        for (int i = 0 ; i &lt; size + 1; i++) {</span>
+<span class="fc" id="L48">            System.out.println(&quot;Popped element: &quot; + minHeap.pop());</span>
+<span class="fc" id="L49">            System.out.println(&quot;Heap after popping:&quot;);</span>
+<span class="fc" id="L50">            System.out.println(minHeap);</span>
+        }
+
+<span class="fc" id="L53">        Integer[] maxheaparray = {5,3,8,2,7,6,13,655,525};</span>
+<span class="fc" id="L54">        MaxHeap&lt;Integer&gt; maxHeap1 = new MaxHeap&lt;&gt;(maxheaparray);</span>
+<span class="fc" id="L55">        System.out.println(&quot;Max-Heap:&quot;);</span>
+<span class="fc" id="L56">        System.out.println(maxHeap1.toString());</span>
+        
+<span class="fc" id="L58">         size = maxHeap1.size ;</span>
+<span class="fc" id="L59">        System.out.println(&quot;Removing elements from the Max-Heap:&quot;);</span>
+<span class="fc bfc" id="L60" title="All 2 branches covered.">        for (int i = 0 ; i &lt; size + 1 ; i++) {</span>
+<span class="fc" id="L61">            System.out.println(&quot;Popped element: &quot; + maxHeap1.pop());</span>
+<span class="fc" id="L62">            System.out.println(&quot;Heap after popping:&quot;);</span>
+<span class="fc" id="L63">            System.out.println(maxHeap1.toString());</span>
+        }
+
+<span class="fc" id="L66">        Integer[] minheaparray = {5,3,8,2,7,6,13,655,525};</span>
+<span class="fc" id="L67">        MinHeap&lt;Integer&gt; minHeap1 = new MinHeap&lt;&gt;(minheaparray);</span>
+<span class="fc" id="L68">        System.out.println(&quot;Max-Heap:&quot;);</span>
+<span class="fc" id="L69">        System.out.println(minHeap1.toString());</span>
+        
+<span class="fc" id="L71">         size = minHeap1.size ;</span>
+<span class="fc" id="L72">        System.out.println(&quot;Removing elements from the Max-Heap:&quot;);</span>
+<span class="fc bfc" id="L73" title="All 2 branches covered.">        for (int i = 0 ; i &lt; size + 1 ; i++) {</span>
+<span class="fc" id="L74">            System.out.println(&quot;Popped element: &quot; + minHeap1.pop());</span>
+<span class="fc" id="L75">            System.out.println(&quot;Heap after popping:&quot;);</span>
+<span class="fc" id="L76">            System.out.println(minHeap1.toString());</span>
+        }
+
+<span class="fc" id="L79">        minHeap1.peek();</span>
+
+<span class="fc" id="L81">    }</span>
+}
+
+
+    
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

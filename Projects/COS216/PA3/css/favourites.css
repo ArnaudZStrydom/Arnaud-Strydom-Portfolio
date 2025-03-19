@@ -1,0 +1,124 @@
+body {
+  
+    background-color: white;
+    
+    
+  }
+  @font-face {
+    font-family: 'Monseratt';
+    src: url('Montserrat-Regular.ttf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'Playfair';
+    src: url('PlayfairDisplay-Regular.ttf') format('truetype');
+  
+  }
+  .logo{
+    width: 55px;
+    height: auto;
+   
+    
+  }
+  
+  .navbar {
+    display: flex;
+    background-color: black;
+    overflow: hidden;
+    
+  }
+  
+  .navbar a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 17px;
+  }
+  
+  .navbar a:hover {
+    background-color: rgb(223, 196, 75);
+    color: black;
+  }
+  
+  .navbar a.current {
+    background-color: rgb(223, 196, 75);
+    color: black;
+  }
+  
+  .navbar input[type=text] {
+    padding: 6px;
+    margin-top: 9px;
+    margin-bottom: 9px;
+    margin-left: 150px;
+    font-size: 15px;
+    border: 1px solid #000000;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .navbar a  .navbar input[type=text] {
+      display: block;
+      text-align: left;
+      width: 100%;
+      margin: 0;
+      padding: 14px;
+    }
+  }
+  
+  
+  #flex-container {
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(223, 196, 75);
+    
+  }
+  
+  
+  .alllistings {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+  }
+  
+  
+  .singlelisting {
+    width: 300px;
+    margin-bottom: 20px;
+    border: 0.5px solid black;
+    box-shadow: 1px 10px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    background-color:  white ;
+  }
+  
+
+  
+  .singlelisting img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .details {
+    font-family: 'Monseratt' , 'serif';
+    padding: 10px;
+  }
+  
+  .details h2 {
+    font-family: 'Playfair' , 'serif';
+    color: #333;
+  }
+  
+  .favoritebtn {
+    background-color: #ff4646;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .favoritebtn:hover {
+    background-color:#ff6b6b;
+  }

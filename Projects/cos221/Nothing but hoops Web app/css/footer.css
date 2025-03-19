@@ -1,0 +1,63 @@
+/* Style for the footer */
+footer {
+    background-color: #46464f;
+    color: #C5C6C7;
+    padding: 30px 0;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Style for the footer container */
+footer .container1 {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Style for the footer links */
+footer .row li a {
+    color: #C5C6C7;
+    text-decoration: none; /* Remove underline from links */
+    text-align: center;
+}
+
+footer .row h3 {
+    color: #C5C6C7;
+    text-decoration: none; /* Remove underline from links */
+    text-align: center;
+    text-decoration: none;
+}
+
+footer .row li {
+    color: #C5C6C7;
+    text-decoration: none; /* Remove underline from links */
+    text-align: center;
+}
+
+/* Style for the footer bottom */
+.footer-bottom {
+    background-color: #46464f;
+    padding: 10px 0;
+    text-decoration: none;
+}
+
+/* Style for the footer bottom container */
+.footer-bottom .container1 {
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Style for the footer bottom text */
+.footer-bottom p {
+    color: #C5C6C7;
+    margin: 0;
+    text-decoration: none;
+}
+
+footer .row ul {
+    list-style-type: none;
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    text-decoration: none;
+}

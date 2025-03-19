@@ -1,0 +1,54 @@
+TO DRAW_CIRCLE :R
+  ; Draw first half of the circle (first arc)
+  ARC 180 :R  ; Draw an arc of 180 degrees with radius :R
+  
+  ; Position the turtle to start the second arc
+  RIGHT 180  ; Turn the turtle around to face the opposite direction
+  
+  ; Draw the second half of the circle (second arc)
+  ARC 180 :R  ; Draw another arc of 180 degrees to complete the circle
+END
+
+TO DRAW_CIRCLES :N :R :ANGLE
+  IF :N = 0 [STOP]  ; Base case: Stop when all circles are drawn
+
+  ; Move forward to position the circle (increase space by multiplying :R by 2)
+  PENUP
+  FORWARD (2 * :R)  ; Increase the distance between each circle by multiplying :R by 2
+  PENDOWN
+
+  ; Draw the circle using the ARC command
+  DRAW_CIRCLE 20  ; Draw a small circle with a radius of 20
+
+  ; Fill the circle if it is every second circle (even-numbered circles)
+  IFELSE (REMAINDER :N 2) = 0 [
+    FILL  ; Fill the circle if :N is even
+  ] [
+    ; Do nothing if :N is odd (no filling)
+  ]
+
+  ; Move back to the center
+  PENUP
+  BACK (2 * :R)  ; Move back to the center, with the same spacing factor
+  PENDOWN
+
+  ; Rotate for the next circle and call the function recursively
+  RIGHT :ANGLE
+  DRAW_CIRCLES :N - 1 :R :ANGLE
+END
+
+TO MAIN
+  CLEARSCREEN  ; Reset the screen
+  SHOWTURTLE  ; Ensure the turtle is visible
+  HOME  ; Move the turtle to the center of the screen
+  SETPOS [0 0]  ; Ensure the turtle is at the center (optional, HOME already centers it)
+  
+  ; Adjust the starting position to compensate for the spacing
+  PENUP
+  FORWARD (2 * 150)  ; Move forward by 2 times the radius (adjust this if necessary)
+  PENDOWN
+  
+  ; Draw the circles with 8 circles, a radius of 150, and 45-degree separation
+  DRAW_CIRCLES 8 150 45  
+END
+

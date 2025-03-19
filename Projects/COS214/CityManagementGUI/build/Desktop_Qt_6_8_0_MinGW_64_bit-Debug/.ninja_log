@@ -1,0 +1,9 @@
+# ninja log v6
+26	3017	7524545241699417	CityManagementGUI_autogen/timestamp	853c9e64b4866978
+26	3017	7524545241699417	CityManagementGUI_autogen/mocs_compilation.cpp	853c9e64b4866978
+26	3017	7524545241699417	C:/Users/ipadm/OneDrive/Desktop/COS214/CityManagementGUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/CityManagementGUI_autogen/timestamp	853c9e64b4866978
+26	3017	7524545241699417	C:/Users/ipadm/OneDrive/Desktop/COS214/CityManagementGUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/CityManagementGUI_autogen/mocs_compilation.cpp	853c9e64b4866978
+3240	11248	7524545246419430	CMakeFiles/CityManagementGUI.dir/CityManagementGUI_autogen/mocs_compilation.cpp.obj	55987f20f3de1d6d
+3404	11313	7524545248049427	CMakeFiles/CityManagementGUI.dir/main.cpp.obj	27d226ab9d0d187
+3572	11716	7524545249729436	CMakeFiles/CityManagementGUI.dir/mainwindow.cpp.obj	43c512c9a419895a
+11717	13863	7524545331192544	CityManagementGUI.exe	5dc2fbe5664b5193
