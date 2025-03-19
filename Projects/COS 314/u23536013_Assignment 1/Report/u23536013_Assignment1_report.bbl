@@ -1,0 +1,33 @@
+\begin{thebibliography}{1}
+
+\bibitem{dorigo1996ant}
+Marco Dorigo and Luca~M Gambardella.
+\newblock Ant colony system: A cooperative learning approach to the traveling
+  salesman problem.
+\newblock {\em IEEE Transactions on Evolutionary Computation}, 1(1):53--66,
+  1996.
+
+\bibitem{glover1986future}
+Fred Glover.
+\newblock Future paths for integer programming and links to artificial
+  intelligence.
+\newblock {\em Computers \& Operations Research}, 13(5):533--549, 1986.
+
+\bibitem{goldberg1989genetic}
+David~E Goldberg.
+\newblock {\em Genetic algorithms in search, optimization, and machine
+  learning}.
+\newblock Addison-Wesley, 1989.
+
+\bibitem{held1962dynamic}
+Michael Held and Richard~M Karp.
+\newblock A dynamic programming approach to sequencing problems.
+\newblock {\em Journal of the Society for Industrial and Applied Mathematics},
+  10(1):196--210, 1962.
+
+\bibitem{kirkpatrick1983optimization}
+Scott Kirkpatrick, C~Daniel Gelatt, and Mario~P Vecchi.
+\newblock Optimization by simulated annealing.
+\newblock {\em Science}, 220(4598):671--680, 1983.
+
+\end{thebibliography}
