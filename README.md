@@ -2,6 +2,8 @@
 
 Welcome to my portfolio! This repository contains a collection of projects, scripts, and tutorials I've worked on over the years. It showcases my skills in [C++ , Java , JavaScript , TypeScript , Node.js , css , HTML , PHP].
 
+This Portfolio is still under construction and quite a few things need to be added for the portfolio to be fully complete.
+
 ## Table of Contents
 - [Projects](#projects)
 - [Tutorials](#tutorials)
